@@ -1,0 +1,18 @@
+<html>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://json.northpole.ro/javascripts/jnorthpole.js"></script>
+    <script type="text/javascript">
+        responseHandler = function (data) {
+            console.log(data);
+        };
+
+        jNorthPole.BASE_URL = 'https://json.northpole.ro/';
+        jsonObject = {
+            "api_key": "andi",
+            "secret": "andisecret"
+        }
+        jNorthPole.getStorage(jsonObject, responseHandler);
+    </script>
+</body>
+</html>
