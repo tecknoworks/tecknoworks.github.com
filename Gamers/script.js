@@ -1,9 +1,9 @@
 
 var app = angular.module('firstPageModule', []);
 app.controller('firstPageController', function($scope) {
-    $scope.email = "John",
-    $scope.password = "Doe"
-    $scope.repassword = "Doe";
+    $scope.email = "",
+    $scope.password = ""
+    $scope.repassword = "";
     $scope.registerUser = function(){
      			debugger;
      			alert("");
