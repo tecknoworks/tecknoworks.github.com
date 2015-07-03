@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- START BODY-->
-</br>
+
 <div class="container-fluid">	
 <div class="row">
 <div class="col-md-5"><a href="./index.html"><img src="./tmp/img/icon.png" width="100px" height="100px"/></a></div>
@@ -30,7 +30,7 @@
   <div class="checkbox">
     <label><input type="checkbox"> Remember</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </div>
 
@@ -41,9 +41,8 @@
 </br>
 </br>
 </br>
-<div class="margine">
-<div class="row"> <!-- Start Div ROW Content -->
 
+<div class="row"> <!-- Start Div ROW Content -->
 <div class="col-md-7">
 
 <h3> News </h3>
@@ -78,14 +77,13 @@ In eu tortor at magna scelerisque efficitur in et ipsum. Vestibulum ac sapien au
     <input type="password" class="form-control" id="pwd">
   </div>
  
-  <button type="submit" class="btn btn-primary">Register</button>
+  <button type="submit" class="btn btn-default">Register</button>
 </form>
 
 
 </div> <!-- END DIV REGISTER -->
 
 </div> <!-- End div Row Content -->
-</div>
 </br>
 </br>
 </br>
@@ -110,8 +108,19 @@ In eu tortor at magna scelerisque efficitur in et ipsum. Vestibulum ac sapien au
 
 </div> <!-- End div container -->
 
+<<<<<<< HEAD
 <!-- END BODY-->	
+=======
+	
+	
+	
+	
+test
+	
+>>>>>>> b90ac74ec2879870801533a808b2c72b54e2cae5
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
 <!-- Read the Docs: https://json.northpole.ro/index -->
 <script src="https://json.northpole.ro/javascripts/jnorthpole.js"></script>
 <script type="text/javascript">
@@ -121,8 +130,8 @@ In eu tortor at magna scelerisque efficitur in et ipsum. Vestibulum ac sapien au
 
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         jsonObject = {
-            "api_key": "andi",
-            "secret": "andisecret"
+            "api_key": "oliviu",
+            "secret": "olisecret"
         }
         jNorthPole.getStorage(jsonObject, responseHandler);
 </script>	
