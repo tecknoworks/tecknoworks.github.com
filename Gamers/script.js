@@ -20,3 +20,28 @@ app.controller('firstPageController', function($scope) {
 registerResponseHandler = function (data) {
             alert("success");
         };
+		
+		
+		
+function validarenume() {
+    var x = document.forms["form"]["email"].value;
+    if (x == null || x == "") {                                        //verifica daca este un email scris
+        alert("Please enter your email.");
+        return false;
+    }
+	var y = document.forms["form"]["pass"].value;
+    if (y == null || y == "") {
+        alert("Please enter your password.");                               // verifica daca este un nume scris
+        return false;
+    }
+	var z = document.forms["form"]["prenume"].value;
+    if (z == null || z == "") {
+        alert("Nu ati scris un prenume.");                           // verifica daca este un prenume scris
+        return false;
+    }
+	var q = document.forms["form"]["mail"].value;
+    if (q == null || q == "") {
+        alert("Nu ati scris un email.");                           // verifica daca este un email scris
+        return false;
+    }
+}
