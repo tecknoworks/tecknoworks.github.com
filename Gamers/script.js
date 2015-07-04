@@ -36,12 +36,12 @@ function validarenume() {
     }
 	var z = document.forms["form"]["prenume"].value;
     if (z == null || z == "") {
-        alert("Nu ati scris un prenume.");                           // verifica daca este un prenume scris
+        alert("Nu ati scris un prenume.");                           // verifica daca este un prenume scris - not yet used
         return false;
     }
 	var q = document.forms["form"]["mail"].value;
     if (q == null || q == "") {
-        alert("Nu ati scris un email.");                           // verifica daca este un email scris
+        alert("Nu ati scris un email.");                           // verifica daca este un email scris - not used yet
         return false;
     }
 }
