@@ -36,3 +36,9 @@ color: #529FF7;
 	border-color: #62C400;
     -moz-box-shadow: none;
   }
+  
+  
+  .bordura{
+  
+  border: 1px dashed #808080;
+  }
