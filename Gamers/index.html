@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="checkCookie()">
+<body>
 <!-- START BODY-->
 </br>
 <div class="container-fluid">	
@@ -27,10 +27,10 @@
 <div class="col-md-5"><a href="./index.html"><img src="./tmp/img/logo2.png" width="100" height="100"/></a></div>
 <div class="col-md-7">
 
-<form name="form" class="form-inline" role="form" onsubmit="return validarenume()" >
+<form name="form" ng-app="firstPageModule" ng-controller="firstLoginController" class="form-inline" role="form" >
   <div class="form-group">
     <label for="email">Email Address:</label>
-    <input type="email" placeholder="me@example.com" class="form-control" id="email" name="email">
+    <input type="text" placeholder="me@example.com" class="form-control" id="email" name="email">
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
@@ -39,7 +39,7 @@
   <div class="checkbox">
     <label><input type="checkbox"> Remember</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" onsubmit="createCookie" ng-click="loginUser()" class="btn btn-primary">Submit</button>
 
 </form>
 <div class="regrec" align="right"><a href="#reg">Register</a> | <a href="#rec">Recover</a></div>
@@ -75,7 +75,7 @@
 <div ng-app="firstPageModule" ng-controller="firstPageController">
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email"  placeholder="me@example.com" ng-model="email" class="form-control" id="email" name="uEmail"> 
+    <input type="text"  placeholder="me@example.com" ng-model="email" class="form-control" id="email" name="uEmail"> 
     
   </div>
   <div class="form-group">
@@ -127,7 +127,7 @@
 <script src="https://json.northpole.ro/javascripts/jnorthpole.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 <script src="script.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript"> </script>
 </script>
 
 
