@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  ng-app="firstPageModule">
 <head>
 <title> Gamers Connected</title>
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
@@ -12,14 +12,14 @@
 
 
 <script>
-
+    
 
 
 </script>
 
 </head>
 
-<body onload="checkCookie()">
+<body ng-controller="firstPageController" data-ng-init="init()">
 <!-- START BODY-->
 </br>
 <div class="container-fluid">	
@@ -27,19 +27,19 @@
 <div class="col-md-5"><a href="./index.html"><img src="./tmp/img/logo2.png" width="100" height="100"/></a></div>
 <div class="col-md-7">
 
-<form name="form" class="form-inline" role="form" onsubmit="return validarenume()" >
+<form name="form" ng-submit="loginUser()" class="form-inline" role="form" >
   <div class="form-group">
-    <label for="email">Email Address:</label>
-    <input type="email" placeholder="me@example.com" class="form-control" id="email" name="email">
+    <label for="email">Username:</label>
+    <input type="text" placeholder="Username" ng-model="usernameLogin" class="form-control" id="username" name="username">
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" placeholder="Password" class="form-control" id="pwd" name="pass">
+    <input type="password" placeholder="Password" ng-model="passwordLogin" class="form-control" id="pwd" name="pass">
   </div>
   <div class="checkbox">
     <label><input type="checkbox"> Remember</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" ng-click="" value="Login" class="btn btn-primary">Login</button>
 
 </form>
 <div class="regrec" align="right"><a href="#reg">Register</a> | <a href="#rec">Recover</a></div>
@@ -72,10 +72,10 @@
 <div class="col-md-5">
 <h3 id="reg">Not a member? Join us!</h3>
 
-<div ng-app="firstPageModule" ng-controller="firstPageController">
+<div>
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email"  placeholder="me@example.com" ng-model="email" class="form-control" id="email" name="uEmail"> 
+    <label for="email">Username:</label>
+    <input type="text"  placeholder="Username" ng-model="username" class="form-control" id="username" name="username"> 
     
   </div>
   <div class="form-group">
