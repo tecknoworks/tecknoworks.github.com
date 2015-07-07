@@ -5,8 +5,9 @@ app.controller('firstPageController', ['$scope', function ($scope) {
     $scope.repassword = " ";
     
     $scope.init = function () {
-    // check if there is query in url
-    // and fire search in case its value is not empty
+        var currentUser = getCookie(gamersCurrentUserCookie);
+    if (currentUser != undefined  && currentUser != null)
+        
     };
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
@@ -20,7 +21,6 @@ app.controller('firstPageController', ['$scope', function ($scope) {
             "api_key": $scope.usernameLogin,
             "secret": $scope.passwordLogin
         }
-        responseHandler = function (data) {console.log(data);};
         jNorthPole.getStorage(jsonObj, responseHandler);}
 }]);
 
@@ -46,13 +46,12 @@ function getCookie(cname) {
 }
 
 responseHandler = function (data){
-    if(data.api_key != undefined)
+    debugger;
+    if(data[0].id != undefined)
     {
-        debugger;
-        setCookie(gamersCurrentUserCookie, data.api_key)
+        setCookie(gamersCurrentUserCookie, data[0].id)
     }
-    
-    console.write(data);
+
 };
 
 /*
