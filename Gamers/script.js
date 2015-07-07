@@ -1,45 +1,78 @@
-var app = angular.module('firstPageModule', []);
-
+var app = angular.module('firstPageModule',[]);
 app.controller('firstPageController', ['$scope', function ($scope) {
-    $scope.email = " ";
+    $scope.username = " ";
     $scope.password = " ";
     $scope.repassword = " ";
+    
+    $scope.init = function () {
+    // check if there is query in url
+    // and fire search in case its value is not empty
+    };
     $scope.registerUser = function () {
-        alert(".");
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
-        jsonObject = {
-            "api_key": $scope.email,
-            "secret": $scope.password
-        }
-        responseHandler = function (data) {console.log(data);
-                                          };
-        jNorthPole.postUser(jsonObject, responseHandler);
-    }
-}]);
-
-responseHandler = function (data) { alert("Success");
-        };    
-
-var app = angular.module('firstPageModule', []);
-
-app.controller('firstLoginController', ['$scope', function ($scope) {
-    $scope.email = " ";
-    $scope.password = " ";
+        responseHandler = function (data) {console.log(data);};
+        jNorthPole.createUser($scope.username, $scope.password, responseHandler);}
+    $scope.usernameLogin = " ";
+    $scope.passwordLogin = " ";
     $scope.loginUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
-        jsonObject = {
-            "api_key": $scope.email,
-            "secret": $scope.password
+        jsonObj = {
+            "api_key": $scope.usernameLogin,
+            "secret": $scope.passwordLogin
         }
-        responseHandler = function (data) {console.log(data);
-        };
-        jNorthPole.getStorage(jsonObject, responseHandler);}
+        responseHandler = function (data) {console.log(data);};
+        jNorthPole.getStorage(jsonObj, responseHandler);}
 }]);
 
-responseHandler = function (data) {
-            alert("Success");
-                                       };			
-/*		
+var validPeriod = 24*60*60*1000;
+var gamersCurrentUserCookie = "gamersCurrentUserCookie";
+
+function setCookie(cname, cvalue) {
+    var d = new Date();
+    d.setTime(d.getTime() + validPeriod);
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+responseHandler = function (data){
+    if(data.api_key != undefined)
+    {
+        debugger;
+        setCookie(gamersCurrentUserCookie, data.api_key)
+    }
+    
+    console.write(data);
+};
+
+/*
+app.controller('firstLoginController', ['$scope', function ($scope) {
+    $scope.usernameLogin = " ";
+    $scope.passwordLogin = " ";
+    $scope.loginUser = function () {
+        jNorthPole.BASE_URL = 'https://json.northpole.ro/';
+        jsonObj = {
+            "api_key": $scope.usernameLogin,
+            "secret": $scope.passwordLogin
+        }
+        responseHandler = function (data) {console.log(data);};
+        jNorthPole.getStorage(jsonObj, responseHandler);} 
+    
+}]);*/
+
+
+
+/*
 function validarenume() {
     var x = document.forms["form"]["email"].value;
     if (x == null || x == "") {                                        //verifica daca este un email scris
@@ -53,7 +86,7 @@ function validarenume() {
     }
 	var z = document.forms['form']['prenume'].value;
     if (z === null || z == "") {
-        alert("Nu ati scris un prenume.");                           // verifica daca este un prenume scris - not yet used
+        alert("Nu ati scris un prenume.");                            // verifica daca este un prenume scris - not yet used
         return false;
     }
 	var q = document.forms['form']['mail'].value;
@@ -63,30 +96,32 @@ function validarenume() {
     }
 }
 */
-
 //cookie pt login
+/*
+var myApp = angular.module('myApp', ['ngCookies']);
 
-function createCookie(name,value,days) {
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/";
-}
+myApp.controller('MyController', ['$scope','$cookies','$cookieStore','$window', function($scope,$cookies,$cookieStore,$window) {
+  $cookies.usernameLogin = '';
+  $scope.platformCookie = $cookies.usernameLogin;
+  $cookie.put($scope.usernameLogin,'');
+  $cookieStore.put('M','');
+  $scope.myCookie= $cookieStore.get('');
+}]);
+*/
 
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
-}
+/*
+    $scope.setCookie = function () {
+    var lastVal = $cookies.get('lastValue');
+    if
+        
+        $cookies.userName = $scope.usernameLogin;
+        var now = new Date()
+        var time = now.getTime();
+        time += 24*60*60*1000*7;
+        now.setTime(time);
+         cookieLength = (rawDocument.cookie = escape(name) + '=' + escape(value) +
+                 ';path=' + cookiePath+";expires="+now.toGMTString()).length + 1
+        $cookies.put('Username','api_key', {'expires': time})
+        $cookies.put('Password','secret')
+        
+*/
