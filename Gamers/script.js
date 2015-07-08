@@ -6,8 +6,7 @@ app.controller('firstPageController', ['$scope', function ($scope) {
     
     $scope.init = function () {
         var currentUser = getCookie(gamersCurrentUserCookie);
-    if (currentUser != undefined  && currentUser != null)
-        
+        if ( currentUser= ' ' ) { window.location.href = '/home.html'};
     };
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
