@@ -1,12 +1,13 @@
 var app = angular.module('firstPageModule',[]);
-app.controller('firstPageController', ['$scope', function ($scope) {
+app.controller('firstPageController', ['$scope', function ($scope){
     $scope.username = " ";
     $scope.password = " ";
     $scope.repassword = " ";
     
-    $scope.init = function () {
+    $scope.init = function (){
         var currentUser = getCookie(gamersCurrentUserCookie);
-        if ( currentUser= ' ' ) { window.location.href = '/main.html'};
+        if ( currentUser == null && currentUser == undefined ) { window.location.href = 'index.html'}
+        else var currentUser = ''; { window.location.href = 'main.html'}
     };
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
@@ -23,7 +24,7 @@ app.controller('firstPageController', ['$scope', function ($scope) {
         jNorthPole.getStorage(jsonObj, responseHandler);}
 }]);
 
-var validPeriod = 24*60*60*1000;
+var validPeriod = 24 * 60 * 60 * 1000;
 var gamersCurrentUserCookie = "gamersCurrentUserCookie";
 
 function setCookie(cname, cvalue) {
@@ -43,7 +44,11 @@ function getCookie(cname) {
     }
     return "";
 }
-
+    
+function eraseCookie(cname) {
+    createCookie(gamersCurrentUserCookie,-1);
+}
+    
 responseHandler = function (data){
     debugger;
     if(data[0].id != undefined)
