@@ -1,29 +1,31 @@
 var app = angular.module('firstPageModule',[]);
-app.controller('firstPageController', ['$scope', function ($scope){
+app.controller('firstPageController',  function ($scope){
     $scope.username = " ";
     $scope.password = " ";
     $scope.repassword = " ";
     
     $scope.init = function (){
-        var currentUser = getCookie(gamersCurrentUserCookie);
-        if ( currentUser == null && currentUser == undefined ) { window.location.href = 'index.html'}
-        else var currentUser = ''; { window.location.href = 'main.html'}
-    };
+        var currentUser = setCookie("gamersCurrentUserCookie");
+        if( document.cookie.indexOf("gamersCurrentUserCookie=") >   0) {
+    alert("Cookie not found, redirecting you.");
+    location.href = "main.html";};
+    }
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         responseHandler = function (data) {console.log(data);};
-        jNorthPole.createUser($scope.username, $scope.password, responseHandler);}
+        jNorthPole.createUser($scope.username, $scope.password, responseHandler);
+    }
     $scope.usernameLogin = " ";
     $scope.passwordLogin = " ";
     $scope.loginUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         jsonObj = {
-            "api_key": $scope.usernameLogin,
+            "api_key": $scope.usernameLogin,    
             "secret": $scope.passwordLogin
         }
-        jNorthPole.getStorage(jsonObj, responseHandler);}
-}]);
-
+        jNorthPole.getStorage(jsonObj, responseHandler);
+    }
+    
 var validPeriod = 24 * 60 * 60 * 1000;
 var gamersCurrentUserCookie = "gamersCurrentUserCookie";
 
@@ -45,18 +47,18 @@ function getCookie(cname) {
     return "";
 }
     
-function eraseCookie(cname) {
-    createCookie(gamersCurrentUserCookie,-1);
+function eraseCookie(gamersCurrentUserCookie) {
+    setCookie(cname, cvalue, -1);
 }
     
 responseHandler = function (data){
-    debugger;
     if(data[0].id != undefined)
     {
         setCookie(gamersCurrentUserCookie, data[0].id)
     }
 
 };
+    });
 
 /*
 app.controller('firstLoginController', ['$scope', function ($scope) {
