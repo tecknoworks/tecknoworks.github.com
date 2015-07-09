@@ -9,18 +9,11 @@ padding-right: 40px;
 
 body
 {
-background-image: url("http://i58.tinypic.com/2gwtj4i.png");
-background-size: 20%;
 background-color: #EDEDED;
-background-repeat: no-repeat;
-background-attachment: scroll;
-background-position: center;
-
-
 }
 h3
 {
-color: #529FF7;
+color: #529FF7;  /* 529FF7*/
 }
 
  input:required:invalid, input:focus:invalid {
