@@ -6,7 +6,7 @@ app.controller('firstPageController', function ($scope){
     
     $scope.init = function (){
         var currentUser = getCookie(gamersCurrentUserCookie);
-        if( document.cookie.indexOf('cname=') > 0) {
+        if( document.cookie.indexOf('cname') > 0) {
     alert("Welcome Back!");
     location.href = 'main.html';};
     }
@@ -55,7 +55,8 @@ function eraseCookie(gamersCurrentUserCookie) {
 responseHandler = function (data){
     if(data[0].id != undefined)
     {
-        setCookie(gamersCurrentUserCookie, data[0].id)
+        setCookie(gamersCurrentUserCookie, data[0].id);
+        location.href = 'main.html';
     }
 
 };
