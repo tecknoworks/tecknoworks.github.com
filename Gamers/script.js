@@ -1,33 +1,34 @@
 var app = angular.module('firstPageModule',[]);
-app.controller('firstPageController',  function ($scope){
-    $scope.username = " ";
-    $scope.password = " ";
-    $scope.repassword = " ";
+app.controller('firstPageController', function ($scope){
+    $scope.username = "";
+    $scope.password = "";
+    $scope.repassword = "";
     
     $scope.init = function (){
-        var currentUser = setCookie("gamersCurrentUserCookie");
-        if( document.cookie.indexOf("gamersCurrentUserCookie=") >   0) {
+        var currentUser = setCookie(gamersCurrentUserCookie);
+        if( document.cookie.indexOf('gamersCurrentUserCookie=') > 0) {
     alert("Cookie not found, redirecting you.");
-    location.href = "main.html";};
+    location.href = 'index.html';};
     }
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         responseHandler = function (data) {console.log(data);};
         jNorthPole.createUser($scope.username, $scope.password, responseHandler);
     }
-    $scope.usernameLogin = " ";
-    $scope.passwordLogin = " ";
+    
+    $scope.usernameLogin = "";
+    $scope.passwordLogin = "";
     $scope.loginUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         jsonObj = {
             "api_key": $scope.usernameLogin,    
             "secret": $scope.passwordLogin
         }
-        jNorthPole.getStorage(jsonObj, responseHandler);
+        jNorthPole.getStorage(jsonObj, responseHandler); 
     }
     
 var validPeriod = 24 * 60 * 60 * 1000;
-var gamersCurrentUserCookie = "gamersCurrentUserCookie";
+var gamersCurrentUserCookie = gamersCurrentUserCookie;
 
 function setCookie(cname, cvalue) {
     var d = new Date();
@@ -59,21 +60,6 @@ responseHandler = function (data){
 
 };
     });
-
-/*
-app.controller('firstLoginController', ['$scope', function ($scope) {
-    $scope.usernameLogin = " ";
-    $scope.passwordLogin = " ";
-    $scope.loginUser = function () {
-        jNorthPole.BASE_URL = 'https://json.northpole.ro/';
-        jsonObj = {
-            "api_key": $scope.usernameLogin,
-            "secret": $scope.passwordLogin
-        }
-        responseHandler = function (data) {console.log(data);};
-        jNorthPole.getStorage(jsonObj, responseHandler);} 
-    
-}]);*/
 
 
 
