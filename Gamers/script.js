@@ -6,9 +6,9 @@ app.controller('firstPageController', function ($scope){
     
     $scope.init = function (){
         var currentUser = setCookie(gamersCurrentUserCookie);
-        if( document.cookie.indexOf('gamersCurrentUserCookie=') > 0) {
+        if( document.cookie.indexOf('cname=') < 0) {
     alert("Cookie not found, redirecting you.");
-    location.href = 'index.html';};
+    location.href = 'main.html';};
     }
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';

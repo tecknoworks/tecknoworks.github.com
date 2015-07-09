@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
 
 
@@ -35,7 +36,7 @@
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" placeholder="Password" ng-model="passwordLogin" class="form-control" id="pwd" name="pass">
+    <input type="password" placeholder="Password" ng-click="setCookie()" ng-model="passwordLogin" class="form-control" id="pwd" name="pass">
   </div>
   <div class="checkbox">
     <label><input type="checkbox"> Remember</label>
