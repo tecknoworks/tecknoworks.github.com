@@ -26,15 +26,15 @@ app.controller('firstPageController', function ($scope){
         }
         jNorthPole.getStorage(jsonObj, responseHandler); 
     }
-    
+        
 var validPeriod = 24 * 60 * 60 * 1000;
 var gamersCurrentUserCookie = gamersCurrentUserCookie;
 
-function setCookie(cname, cvalue) {
+function setCookie(cname,cvalue) {
     var d = new Date();
     d.setTime(d.getTime() + validPeriod);
     var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+    document.cookie = cname + "=" + cvalue + "; " + expires; + "; path=/";
 }
 
 function getCookie(cname) {
