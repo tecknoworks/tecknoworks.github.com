@@ -5,10 +5,8 @@ app.controller('firstPageController', function ($scope){
     $scope.repassword = "";
     
     $scope.init = function (){
-        var currentUser = getCookie(gamersCurrentUserCookie);
-        if( document.cookie.indexOf('cname') > 0) {
-    alert("Welcome Back!");
-    location.href = 'main.html';};
+        var currentUser = getCookie('gamersCurrentUserCookie');
+        if (currentUser = ""){location.href='main.html'}
     }
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
@@ -27,39 +25,41 @@ app.controller('firstPageController', function ($scope){
         jNorthPole.getStorage(jsonObj, responseHandler); 
     }
         
-var validPeriod = 24 * 60 * 60 * 1000;
-var gamersCurrentUserCookie = gamersCurrentUserCookie;
-
-function setCookie(cname,cvalue) {
-    var d = new Date();
-    d.setTime(d.getTime() + validPeriod);
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires; + "; path=/";
+var gamersCurrentUserCookie=gamersCurrentUserCookie;
+var cname=gamersCurrentUserCookie;
+var expiresVal=24*60*60*1000;
+var setCookie=setCookie;
+    
+function setCookie(cname,value) {
+    var date = new Date();
+    date.setTime(date.getTime() + expiresVal);
+    var expires = "; expires=" + date.toGMTString();
+    document.cookie = cname+  "=" + value + expires + "; path=/";
 }
 
 function getCookie(cname) {
-    var name = cname + "=";
+    var name = cname + "=" ;
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1);
         if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
     }
-    return "";
+    return null;
 }
     
-function eraseCookie(gamersCurrentUserCookie) {
-    setCookie(cname, cvalue, -1);
+function eraseCookie(cname) {
+    setCookie(cname, "", -1);
 }
-    
+
+
 responseHandler = function (data){
     if(data[0].id != undefined)
     {
         setCookie(gamersCurrentUserCookie, data[0].id);
         location.href = 'main.html';
     }
-
-};
+}
     });
 
 
