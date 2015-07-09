@@ -1,18 +1,27 @@
+var userId = "userID";
+
 var app = angular.module('firstPageModule',[]);
+
 app.controller('firstPageController', function ($scope){
     $scope.username = "";
     $scope.password = "";
     $scope.repassword = "";
-    
-    $scope.init = function (){
-        var currentUser = getCookie('gamersCurrentUserCookie');
-        if (currentUser = ""){location.href='main.html'}
-    }
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         responseHandler = function (data) {console.log(data);};
         jNorthPole.createUser($scope.username, $scope.password, responseHandler);
     }
+    
+    $scope.init = function(){
+        var isUserIn = localStorage.getItem(userId); 
+        if(isUserIn && isUserIn.length > 0)
+        {
+            location.href = 'main.html';
+        };
+    };
+
+function logOut()
+{localStorage.clear(userId);};
     
     $scope.usernameLogin = "";
     $scope.passwordLogin = "";
@@ -21,42 +30,14 @@ app.controller('firstPageController', function ($scope){
         jsonObj = {
             "api_key": $scope.usernameLogin,    
             "secret": $scope.passwordLogin
-        }
+        };
         jNorthPole.getStorage(jsonObj, responseHandler); 
     }
-        
-var gamersCurrentUserCookie=gamersCurrentUserCookie;
-var cname=gamersCurrentUserCookie;
-var expiresVal=24*60*60*1000;
-var setCookie=setCookie;
-    
-function setCookie(cname,value) {
-    var date = new Date();
-    date.setTime(date.getTime() + expiresVal);
-    var expires = "; expires=" + date.toGMTString();
-    document.cookie = cname+  "=" + value + expires + "; path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=" ;
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    }
-    return null;
-}
-    
-function eraseCookie(cname) {
-    setCookie(cname, "", -1);
-}
-
-
+      
 responseHandler = function (data){
     if(data[0].id != undefined)
     {
-        setCookie(gamersCurrentUserCookie, data[0].id);
+        localStorage.setItem(userId,data[0].id);
         location.href = 'main.html';
     }
 }
