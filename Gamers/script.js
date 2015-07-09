@@ -5,9 +5,9 @@ app.controller('firstPageController', function ($scope){
     $scope.repassword = "";
     
     $scope.init = function (){
-        var currentUser = setCookie(gamersCurrentUserCookie);
-        if( document.cookie.indexOf('cname=') < 0) {
-    alert("Cookie not found, redirecting you.");
+        var currentUser = getCookie(gamersCurrentUserCookie);
+        if( document.cookie.indexOf('cname=') > 0) {
+    alert("Welcome Back!");
     location.href = 'main.html';};
     }
     $scope.registerUser = function () {
