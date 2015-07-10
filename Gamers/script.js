@@ -19,15 +19,11 @@ app.controller('firstPageController', function ($scope){
             location.href = 'main.html';
         };
     };
-
-function logOut()
-{localStorage.clear(userId);};
-    
     $scope.usernameLogin = "";
     $scope.passwordLogin = "";
     $scope.loginUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
-        jsonObj = {
+        jsonObj = { 
             "api_key": $scope.usernameLogin,    
             "secret": $scope.passwordLogin
         };
@@ -41,9 +37,19 @@ responseHandler = function (data){
         location.href = 'main.html';
     }
 }
+    
     });
 
+app.controller('secondPageController',function ($scope){
+    $scope.logOut=function(){
+        var isUserIn= localStorage.getItem(userId);
+        if (isUserIn && isUserIn.length > 0)
+        {
+        localStorage.removeItem();
+        }
+    }
 
+});
 
 /*
 function validarenume() {
@@ -70,31 +76,3 @@ function validarenume() {
 }
 */
 //cookie pt login
-/*
-var myApp = angular.module('myApp', ['ngCookies']);
-
-myApp.controller('MyController', ['$scope','$cookies','$cookieStore','$window', function($scope,$cookies,$cookieStore,$window) {
-  $cookies.usernameLogin = '';
-  $scope.platformCookie = $cookies.usernameLogin;
-  $cookie.put($scope.usernameLogin,'');
-  $cookieStore.put('M','');
-  $scope.myCookie= $cookieStore.get('');
-}]);
-*/
-
-/*
-    $scope.setCookie = function () {
-    var lastVal = $cookies.get('lastValue');
-    if
-        
-        $cookies.userName = $scope.usernameLogin;
-        var now = new Date()
-        var time = now.getTime();
-        time += 24*60*60*1000*7;
-        now.setTime(time);
-         cookieLength = (rawDocument.cookie = escape(name) + '=' + escape(value) +
-                 ';path=' + cookiePath+";expires="+now.toGMTString()).length + 1
-        $cookies.put('Username','api_key', {'expires': time})
-        $cookies.put('Password','secret')
-        
-*/
