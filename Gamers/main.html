@@ -14,6 +14,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script src="./js/date_time.js"></script>
 
 
 
@@ -26,7 +27,7 @@
 <div class="col-xs-12 col-md-16" style="background-color: #8b9dc3"> <h4><div align="left" style="margin-left: 80px; margin-right:100px;"><a href="./main.html">HOME</a> &nbsp; &nbsp; <a href="#fps">FPS</a> &nbsp; &nbsp; <a href="#mmo">MMORPG</a> &nbsp; &nbsp; <a href="#str">STRATEGY</a> &nbsp; &nbsp;</div></h4></div>
 </div>
 <div class="row" align="center">
-  <div class="col-md-3"><h4>Categories</h4></br>
+  <div class="col-md-3"><h4><img src="./tmp/img/cat.png" width="30px" height="30px"/>&nbsp;Categories</h4></br>
   <div align="left">
  <h4 id="fps"> FPS </h4>
   <ul class="list-group">
@@ -115,11 +116,16 @@ Feed 9
   </div>
   </div>
   </div>
-  <div class="col-md-3"><h4>User Control Panel</h4></br>
+  <div class="col-md-3"><h4><img src="./tmp/img/option.png" width="30px" height="30px"/>&nbsp;User Control Panel</h4></br>
   <div align="left">
 <h4>Welcome Back, {{user}}</h4>
-<img src="http://i62.tinypic.com/2myouc3.png" width="70px" height="70px"/> 0 New Messages</br></br>
+<img src="./tmp/img/avatar.png" width="70px" height="70px"/> <img src="./tmp/img/message.png" width="20px" height="20px" /> 0 New Messages</br></br>
 <div align="center" >
+Current Time:
+<span id="date_time"></span>
+<script type="text/javascript">window.onload = date_time('date_time');</script>
+</br>
+</br>
 <div class="btn-group" role="group" aria-label="...">
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
