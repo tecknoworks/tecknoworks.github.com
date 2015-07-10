@@ -27,52 +27,27 @@ app.controller('firstPageController', function ($scope){
             "api_key": $scope.usernameLogin,    
             "secret": $scope.passwordLogin
         };
-        jNorthPole.getStorage(jsonObj, responseHandler); 
-    }
-      
+        jNorthPole.getStorage(jsonObj, responseHandler);
+        
+}
+    
+    });
+
 responseHandler = function (data){
     if(data[0].id != undefined)
     {
         localStorage.setItem(userId,data[0].id);
         location.href = 'main.html';
-    }
+    };
 }
-    
-    });
 
 app.controller('secondPageController',function ($scope){
     $scope.logOut=function(){
         var isUserIn= localStorage.getItem(userId);
-        if (isUserIn && isUserIn.length > 0)
-        {
-        localStorage.removeItem();
-        }
+        if (isUserIn && isUserIn.length > 0) {
+        localStorage.removeItem(userId);
+        };
     }
 
 });
 
-/*
-function validarenume() {
-    var x = document.forms["form"]["email"].value;
-    if (x == null || x == "") {                                        //verifica daca este un email scris
-        alert("Please enter your email.");
-        return false;
-    }
-	var y = document.forms['form']['pass'].value;
-    if (y == null || y == "") {
-        alert("Please enter your password.");                               // verifica daca este un nume scris
-        return false;
-    }
-	var z = document.forms['form']['prenume'].value;
-    if (z === null || z == "") {
-        alert("Nu ati scris un prenume.");                            // verifica daca este un prenume scris - not yet used
-        return false;
-    }
-	var q = document.forms['form']['mail'].value;
-    if (q == null || q == "") {
-        alert("Nu ati scris un email.");                           // verifica daca este un email scris - not used yet
-        return false;
-    }
-}
-*/
-//cookie pt login
