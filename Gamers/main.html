@@ -2,6 +2,10 @@
 <html lang="en" ng-app="firstPageModule">
 <head>
 <title> Gamers Website</title>
+<meta charset="utf-8" />
+<meta name="keywords" content="gamers, connected, games, fps, mmorpg">
+<meta name="Author" content="tecknoworks.github.io">
+<meta name="description" content="Gamers Connected brings gamers around the world in one place, to steam, watch, and play together.">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
@@ -19,46 +23,49 @@
 <!-- START BODY-->
 <div class="container-fluid">
 <div class="row" align="center">
-  <div class="col-md-3"><h3>Categories</h3></br>
+<div class="col-xs-12 col-md-16" style="background-color: #8b9dc3"> <h4><div align="left" style="margin-left: 80px; margin-right:100px;"><a href="./main.html">HOME</a> &nbsp; &nbsp; <a href="#fps">FPS</a> &nbsp; &nbsp; <a href="#mmo">MMORPG</a> &nbsp; &nbsp; <a href="#str">STRATEGY</a> &nbsp; &nbsp;</div></h4></div>
+</div>
+<div class="row" align="center">
+  <div class="col-md-3"><h4>Categories</h4></br>
   <div align="left">
- <h4> FPS </h4>
+ <h4 id="fps"> FPS </h4>
   <ul class="list-group">
-  <li class="list-group-item">Battlefield</li>
-  <li class="list-group-item">Call of Duty</li>
-  <li class="list-group-item">Counter Strike</li>
+  <li class="list-group-item ul" ><a href="#"> Battlefield</a></li>
+  <li class="list-group-item ul"><a href="#"> Call of Duty</a></li>
+  <li class="list-group-item ul"><a href="#"> Counter Strike</a></li>
   </ul>
- <h4> MMORPG</h4>
-  <ul class="list-group">
-<li class="list-group-item"> Aion Online</li>
-<li class="list-group-item"> Cabal Online </li>
-<li class="list-group-item"> Conquer Online</li>
-<li class="list-group-item"> Lineage 2</li>
-<li class="list-group-item"> Metin 2</li>
-<li class="list-group-item"> Minecraft</li>
-<li class="list-group-item"> Mu Online</li>
-<li class="list-group-item"> Silkroad Online</li>
-<li class="list-group-item"> World of Warcraft</li>
+ <h4 id="mmo"> MMORPG</h4>
+  <ul  class="list-group" >
+<li class="list-group-item ul"  ><a href="#"> Aion Online</a></li>
+<li class="list-group-item ul"><a href="#"> Cabal Online</a> </li>
+<li class="list-group-item ul"><a href="#"> Conquer Online</a></li>
+<li class="list-group-item ul"><a href="#"> Lineage 2</a></li>
+<li class="list-group-item ul"><a href="#"> Metin 2</a></li>
+<li class="list-group-item ul"><a href="#"> Minecraft</a></li>
+<li class="list-group-item ul"><a href="#"> Mu Online</a></li>
+<li class="list-group-item ul"><a href="#"> Silkroad Online</a></li>
+<li class="list-group-item ul"><a href="#"> World of Warcraft</a></li>
 </ul>
- <h4> STRATEGY</h4>
+ <h4 id="str"> STRATEGY</h4>
  <ul class="list-group">
- <li class="list-group-item">Command & Conquer</li>
- <li class="list-group-item">StarCraft</li>
- <li class="list-group-item">Dota</li>
- <li class="list-group-item">Warcraft</li>
- <li class="list-group-item">League of Legends</li>
+ <li class="list-group-item ul"><a href="#">Command & Conquer</a></li>
+ <li class="list-group-item ul"><a href="#">StarCraft</a></li>
+ <li class="list-group-item ul"><a href="#">Dota</a></li>
+ <li class="list-group-item ul"><a href="#">Warcraft</a></li>
+ <li class="list-group-item ul"><a href="#">League of Legends</a></li>
  
  </ul>
  
  </div>
   </div>
-  <div class="col-md-6"><h3>Most Played</h3> </br>
+  <div class="col-md-6">  </br></br></br>
   <div align="left">
 
 <div align="center">
 </br>
 </br>
 <img src="http://i62.tinypic.com/6jf03k.png"/></br>
-<a href="#">Username</a> - Playing World of Warcraft | Spectators: 5 | Total time played: 2 days, 13 hours
+<div class="bordura"><a href="#">Username</a> - Playing World of Warcraft | Spectators: 5 | Total time played: 2 days, 13 hours</div>
 
 <div class="accordion" id="accordion">
   <div class="accordion-group">
@@ -67,7 +74,7 @@
         <div align="right">(Expand ++)</div>
       </a>
 	 
-    </div></div><div class="bordura">
+    </div></div><div class="bordura ul">
 <div align="left">Feed 1</br>
 Feed 2</br>
 Feed 3</br>
@@ -84,7 +91,7 @@ Feed 3</br>
 	  </div>
 	  </div></div>
 <h3> Feed</h3></br>
-<div class="bordura">
+<div class="bordura ul">
 <div align="left"></br>
 Feed 1
 <hr style="border: 1px dashed #CFCFCF ;" />
@@ -108,11 +115,11 @@ Feed 9
   </div>
   </div>
   </div>
-  <div class="col-md-3"><h3>User Control Panel</h3></br>
+  <div class="col-md-3"><h4>User Control Panel</h4></br>
   <div align="left">
 <h4>Welcome Back, {{user}}</h4>
 <img src="http://i62.tinypic.com/2myouc3.png" width="70px" height="70px"/> 0 New Messages</br></br>
-<div align="center">
+<div align="center" >
 <div class="btn-group" role="group" aria-label="...">
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

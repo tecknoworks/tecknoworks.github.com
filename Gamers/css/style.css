@@ -11,6 +11,18 @@ body
 {
 background-color: #EDEDED;
 }
+
+
+a { color:#529FF7; text-decoration:none; outline:0; -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -o-transition: all .4s ease; transition: all .4s ease}
+a:hover{ color:#ff6600; text-decoration:underline; outline:0}
+a:focus, a:active, a:visited { outline:0}
+a:hover{ -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -o-transition: all .4s ease; transition: all .4s ease}
+
+
+
+
+
+
 h3
 {
 color: #529FF7;  
