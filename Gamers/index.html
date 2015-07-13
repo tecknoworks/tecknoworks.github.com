@@ -44,13 +44,25 @@
   <div class="checkbox">
     <label><input type="checkbox"> Remember</label>
   </div>
-  <button type="submit" value="Login" class="btn btn-primary">Login</button>
+  <button type="submit" value="Login" class="btn btn-warning">Login</button>
 
 </form>
-<div class="regrec" align="right"><a href="#reg">Register</a> | <a href="#rec">Recover</a></div>
+<div class="regrec" align="right"><a href="#reg">Register</a> | <a href="#rec" onclick="showHideDiv('div-1')">Recover</a></div>
 
 </div>
-
+<div align="right" id="div-1" style="display:none; margin-right: 65px; margin-top:50px;" >
+    </br>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">Recover Password</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Username">
+  </div>
+  
+  <button type="submit" class="btn btn-warning" onClick="alert('Password Sent Succesfully')">Send Password</button>
+</form>
+    
+    </div>
+</div>
 </div>  <!-- End div ROW HEADER -->
 </br>
 <hr style="border: 1px solid #FAE050 ;" />
@@ -93,7 +105,7 @@
     <input type="password" placeholder="Password" ng-model="repassword" class="form-control" id="pwd" required>
   </div>
  
-  <button type="submit" onClick="" ng-click="registerUser()" class="btn btn-primary" >Register</button>
+  <button type="submit" onClick="" ng-click="registerUser()" class="btn btn-success" >Register</button>
 
 
 
