@@ -1,3 +1,6 @@
+
+
+
 .margine{
 padding-left: 10px;
 padding-right: 10px;
@@ -9,7 +12,9 @@ padding-right: 40px;
 
 body
 {
-background-color: #EDEDED;
+
+    background-color: #EDEDED;
+
 }
 
 
@@ -37,3 +42,16 @@ color: #529FF7;
 
 border:1px solid green;
 }
+
+/*
+.connect{
+    background-image:url("http://i60.tinypic.com/ori2ia.png");
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 9999px;
+    margin:auto;
+}
+*/
+
+
