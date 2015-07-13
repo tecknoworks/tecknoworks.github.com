@@ -8,25 +8,36 @@ app.controller('firstPageController', function ($scope) {
         if (isUserIn && isUserIn.length > 0) 
         {
             location.href = 'main.html';
+            window.alert("Welcome back!");
         }
-    };
-    responseHandler = function (data) {
-        if (data[0].id != undefined)
-        {
-        localStorage.setItem(userId,data[0].id);
-        location.href = 'main.html';
-        } 
     };
 });
 
 app.controller('registerController', function ($scope) {
-    $scope.username = "";
+    $scope.username = "";    
     $scope.password = "";
     $scope.repassword = "";
     $scope.registerUser = function () {
-        jNorthPole.BASE_URL = 'https://json.northpole.ro/';
-        jNorthPole.createUser($scope.username, $scope.password, responseHandler);
-        responseHandler = function (data) {console.log(data); };
+        jNorthPole.BASE_URL = 'https://json.northpole.ro/'; 
+        jNorthPole.createUser($scope.username, $scope.password, function (data) {
+            if (data = undefined){
+                debugger
+            };
+        });
+        jsonObj = {
+            'api_key': $scope.username,
+            'secret': $scope.password
+        };
+        jNorthPole.createStorage(jsonObj,function (data) {
+            if (data = undefined){
+                debugger
+            };
+        });
+        jNorthPole.putStorage(jsonObj, function (data) {
+            if (data = undefined){
+                debugger
+            };
+        }); 
     };
 });
 
@@ -36,10 +47,16 @@ app.controller('loginController', function ($scope) {
     $scope.loginUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/';
         jsonObj = {
-            "api_key": $scope.usernameLogin,
-            "secret": $scope.passwordLogin
+            'api_key': $scope.usernameLogin,
+            'secret': $scope.passwordLogin
         };
-        jNorthPole.getStorage(jsonObj, responseHandler);
+        jNorthPole.getStorage(jsonObj, function (data) {
+        if (data[0].id != undefined)
+        {
+        localStorage.setItem(userId,data[0].id);
+        location.href = 'main.html';
+        } 
+    });
     };
 });
 
@@ -51,6 +68,7 @@ app.controller('secondPageController', function ($scope) {
         }
     };
 });
+    
 
 
 
