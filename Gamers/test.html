@@ -1,61 +1,75 @@
- <div class="col-md-6">  </br></br></br>
-  <div align="left">
+<html>
 
-<div align="center">
-</br>
-</br>
-    <img src="http://i62.tinypic.com/6jf03k.png" style="box-shadow: 5px 5px 2px #808080"/></br></br>
-<div class="bordura"><a href="#">Username</a> - Playing World of Warcraft | Spectators: 5 | Total time played: 2 days, 13 hours</div>
+<head>
+    <style>
+    
+    #data-container {
+  margin: 10px;
+}
+ 
+#data-container .data-item {
+  background-color: #444444;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  color: #fff;
+}
+ 
+#loading-div {
+  display: none;
+}
+ 
+#button-more{
+  cursor: pointer;
+  margin: 0 auto;
+  background-color: #aeaeae;
+  color: #fff;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+}
+    
+    </style>
+    
+    
+</head>
 
-<div class="accordion" id="accordion">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-        <div align="right">(Expand ++)</div>
-      </a>
-	 
-    </div></div><div class="bordura ul">
-<div align="left">Last 10 Feeds</br>
-Feed 2</br>
-Feed 3</br>
-
-
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner" align="left">
-        Feed 4</br>
-		Feed 5</br>
-		Feed 6</br>
-		Feed 7</br>
-Feed 8</br>
-Feed 9</br>
-Feed 10
-
+<body>
+    
+    <div id="data-container">
+  <div class="data-item">
+    Hi! I am the first item.
+  </div>
+  <div class="data-item">
+    Hi! I am the second item.
+  </div>
+  <div class="data-item">
+    Hi! I am the third item.
+  </div>
+  <div class="data-item">
+    Ok, this is getting boring.
+  </div>
+  <div class="data-item">
+    Let's try something new.
+  </div>
+  <div class="data-item">
+    How about loading some more items through AJAX?
+  </div>
+  <div class="data-item">
+    Click the button below to load more items.
+  </div>
 </div>
-      </div>
-	  </div>
-	  </div></div>
-<h3> Feed</h3></br>
-<div class="bordura ul">
-<div align="left"></br>
-Feed 1
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 2
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 3
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 4
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 5
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 6
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 7
-<hr style="border: 1px dashed #CFCFCF ;" />
-Feed 8
-<hr style="border: 1px dashed #CFCFCF ;" />
-    Infinite Scroll//todo</br>
-</div></div>
+<div id="button-more" onclick="lazyload.load()">
+  Load more items
+</div>
+<div id="loading-div">
+  loading more items
+</div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="load.js"></script>
+</body>
 
-  </div>
-  </div>
-  </div>
+</html>
