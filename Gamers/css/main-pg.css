@@ -16,6 +16,12 @@ background-color: #EDEDED;
 
 }
 
+.navi{
+    background-color:#A8A8A8;
+  
+    
+}
+
 
 a { color:#333; text-decoration:none; outline:0; -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -o-transition: all .4s ease; transition: all .4s ease}
 a:hover{ color:#ff6600; text-decoration:underline; outline:0}
