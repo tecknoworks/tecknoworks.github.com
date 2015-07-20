@@ -1,47 +1,45 @@
 
 
+.margine {
+	padding-left: 10px;
+	padding-right: 10px;
+ }
 
-.margine{
-padding-left: 10px;
-padding-right: 10px;
-}
-.regrec
-{
-padding-right: 40px;
-}
+.regrec {padding-right: 40px;}
 
-body
-{
+body {background-color: #EDEDED;}
 
-    background-color: #EDEDED;
+a {
+	color: #529FF7;
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	transition: all .4s ease
+ }
 
-}
+	a:hover {
+		color: #ff6600;
+		text-decoration: underline;
+		outline: 0
+	 }
 
+	a:focus, a:active, a:visited {outline: 0}
 
-a { color:#529FF7; text-decoration:none; outline:0; -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -o-transition: all .4s ease; transition: all .4s ease}
-a:hover{ color:#ff6600; text-decoration:underline; outline:0}
-a:focus, a:active, a:visited { outline:0}
-a:hover{ -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -o-transition: all .4s ease; transition: all .4s ease}
+	a:hover {
+		-webkit-transition: all .4s ease;
+		-moz-transition: all .4s ease;
+		-o-transition: all .4s ease;
+		transition: all .4s ease
+	 }
 
+.navi {background-color: #000;}
 
+h3 {color: #529FF7;}
 
-.navi{
-    background-color: #000;
-    
-}
+.bordura {border: 1px solid green;}
 
-
-
-h3
-{
-color: #529FF7;  
-}
-
-  
-.bordura{
-
-border:1px solid green;
-}
 
 
 
@@ -58,5 +56,3 @@ border:1px solid green;
     margin:auto;
 }
 */
-
-
