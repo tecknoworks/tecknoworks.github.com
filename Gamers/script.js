@@ -20,7 +20,7 @@ app.controller('registerController', function ($scope) {
     $scope.registerUser = function () {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/'; 
         jNorthPole.createUser($scope.username, $scope.password, function (data) {
-            if (data = undefined){
+            if (data == undefined){
                 debugger
             };
         });
@@ -29,15 +29,18 @@ app.controller('registerController', function ($scope) {
             'secret': $scope.password
         };
         jNorthPole.createStorage(jsonObj,function (data) {
-            if (data = undefined){
+            if (data == undefined){
                 debugger
             };
         });
         jNorthPole.putStorage(jsonObj, function (data) {
-            if (data = undefined){
+            if (data == undefined){
                 debugger
             };
         }); 
+        if (data != undefined ) {
+            location.href = 'index.html'
+        };
     };
 });
 
@@ -70,24 +73,54 @@ app.controller('secondPageController', function ($scope) {
 });
     
 
+/*
 
+angular.module('app').controller('Shell', Shell);
 
+function Shell() {
 
+  var vm = this;
 
+  vm.messages = [
+    {
+      'username': 'username1',
+      'content': 'Hi!'
+    },
+    {
+      'username': 'username2',
+      'content': 'Hello!'
+    },
+    {
+      'username': 'username2',
+      'content': 'Hello!'
+    },
+    {
+      'username': 'username2',
+      'content': 'Hello!'
+    },
+    {
+      'username': 'username2',
+      'content': 'Hello!'
+    },
+    {
+      'username': 'username2',
+      'content': 'Hello!'
+    }
+  ];
 
+  vm.username = 'username1';
 
+  vm.sendMessage = function(message, username) {
+    if(message && message !== '' && username) {
+      vm.messages.push({
+        'username': username,
+        'content': message
+      });
+    }
+  };
 
-
-
-
-
-
-
-
-
-
-
-
+}
+*/
 
 
 
