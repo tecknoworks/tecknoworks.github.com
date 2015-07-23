@@ -24,7 +24,7 @@ $( document ).ready(function() {
 
 successHandler = function (data) {
     var userDetails = data[0];
-    setCookie(cookieName, loginData, 1);
+    setCookie(cookieName, JSON.stringify(loginData), 1);
     debugger;
 };
 
