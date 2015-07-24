@@ -1,4 +1,5 @@
 var loginData;
+var registerData;
 var cookieName = "DoriaBookStoreUser";
 
 $(document).ready(function () {
@@ -27,13 +28,36 @@ successHandler = function (data) {
     //debugger;
 };
 
+$("#btn-inreg").click(function register() {
+    registerData = {api_key:"", secret:""};
+    registerData.api_key = $("#newUser").val();
+    registerData.secret = $("#newpassword").val();  
+    jNorthPole.createUser(registerData.api_key, registerData.secret, function (data) {
+            if (data == undefined){
+                debugger;
+            };
+        });
+    jNorthPole.createStorage(registerData, function (data) {
+            if (data == undefined){
+                debugger;
+            };
+        });
+    jNorthPole.putStorage(registerData, function (data) {
+            if (data == undefined){
+              debugger;
+            };
+        }); 
+});
+
+
+
 function doLogin(){
     loginData = {api_key:"",secret:""};
     loginData.api_key = $("#username").val();
     loginData.secret = $("#password").val();   
     jNorthPole.getStorage(loginData, successHandler);
-    $("#pag").hide();
-    $("#userProfile").show();
+    //$("#pag").hide();
+    //$("#userProfile").show();
 }
 
 function setCookie(cname, cvalue, exdays) {
