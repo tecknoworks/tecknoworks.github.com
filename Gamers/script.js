@@ -21,7 +21,7 @@ app.controller('registerController', function ($scope) {
         jNorthPole.BASE_URL = 'https://json.northpole.ro/'; 
         jNorthPole.createUser($scope.username, $scope.password, function (data) {
             if (data == undefined){
-                debugger
+                debugger;
             };
         });
         jsonObj = {

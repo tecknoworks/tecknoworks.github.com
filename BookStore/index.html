@@ -1,28 +1,44 @@
 <html>
 <head>
 <title> Gamers Connected</title>
-      <meta name="keywords" content="gamers, connected, games, fps, mmorpg">
-      <meta name="Author" content="tecknoworks.github.io">
-      <meta name="description" content="Gamers Connected brings gamers around the world in one place, to steam, watch, and play together.">
-      <meta name=viewport content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-      <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
-      <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-      <link rel="icon" href="./tmp/img/icon.png" type="image/png" size="16x16">
-      <link rel="stylesheet" type="text/css" href="./css/style.css">
+      <meta name="keywords" content="gamers, connected, games, fps, mmorpg"/>
+      <meta name="Author" content="tecknoworks.github.io"/>
+      <meta name="description" content="Gamers Connected brings gamers around the world in one place, to steam, watch, and play together."/>
+      <meta name='viewport' content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap.css"/>
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css"/>
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+      <link rel="icon" href="./tmp/img/icon.png" type="image/png" style='size="16x16"'/>
+      <link rel="stylesheet" type="text/css" href="./css/style.css"/>
       <script src="./js/bootstrap.js"></script>
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.min.js"></script>
       <script src="./js/date_time.js"></script>
 </head>
 <body>
-<div class="content">
-<h1 id="userDisplayName"></h1>
-<input id="username" type="text" name="username" />
-<input id="password" type="text" name="password" />
-<button id="btn-login" name="btn-login">Login</button>
-<button id="btn-logout" name="btn-logout">Logout</button>
-</div>
+<div id="pag">
+    <div class="content">
+        <h3 id="userDisplayName">Login</h3> 
+        
+        <input id="username" type="text" name="username" placeholder="Username" required=""/>
+        <input id="password" type="text" name="password" placeholder="parola" required=""/>
+        <button id="btn-login" name="btn-login">Login</button>
+        <button id="btn-logout" name="btn-logout" style="display: none;">Logout</button>
+    </div>
+    
+    <div id="inregistrare">
+        <h3>Inregistrare</h3>
+        <input id="newUser" type="text" name="newUser" placeholder="Username"/>
+        <input id="newpassword" type="password" name="newpassword" placeholder="parola"/>
+        <input id="newpassword" type="password" name="newpassword" placeholder="rescrie parola"/>
+        <button id="btn-inreg" name="btn-inreg">Inregistrare</button>
+    </div>
+ </div>   
+    
+    <div id="userProfile">
+    
+    </div>
+
 <script src="https://json.northpole.ro/javascripts/jnorthpole.js"></script>
 <script src="./js/angular.min.js"></script>
 <script src="./js/script.js"></script>
