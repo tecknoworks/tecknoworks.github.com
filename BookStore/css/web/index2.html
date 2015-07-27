@@ -1,201 +1,198 @@
-<html><head>
-		<title>Bine ai venit la Doria Bookstore</title>
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="js/jquery.min.js"></script>
-		 <!-- Custom Theme files -->
-		<link href="css/style.css" rel="stylesheet" type="text/css">
-   		 <!-- Custom Theme files -->
-   		 <!---- start-smoth-scrolling---->
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-		 <!---- start-smoth-scrolling---->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		
-		<!----webfonts--->
-		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-		<!---//webfonts--->
-		<!----start-top-nav-script---->
-		<script>
-			$(function() {
-				var pull 		= $('#pull');
-					menu 		= $('nav ul');
-					menuHeight	= menu.height();
-				$(pull).on('click', function(e) {
-					e.preventDefault();
-					menu.slideToggle();
-				});
-				$(window).resize(function(){
-	        		var w = $(window).width();
-	        		if(w > 320 && menu.is(':hidden')) {
-	        			menu.removeAttr('style');
-	        		}
-	    		});
-			});
-		</script>
-		<!----//End-top-nav-script---->
-	</head>
-	<body>
-		<!----container---->
-		<div class="container">
-			<!----top-header---->
-			<div class="top-header">
-				<div class="logo">
-					<a href="index.html"><img src="logo2.gif" title="brandlogo" height="150" width="250"></a>
-				</div>
-				<div class="top-header-info">
-					
-					<div class="cart-details">
-						<div class="add-to-cart">
-							<ul class="unstyled-list list-inline">
-								<li><span class="cart"> </span>
-									<ul class="cart-sub">
-										<li><p>0 Products</p></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div class="login-rigister">
-							<ul class="unstyled-list list-inline">
-								<li><a class="login" href="#">Login</a></li>
-								<li><a class="rigister" href="#">REGISTER <span> </span></a></li>
-								<div class="clearfix"> </div>
-							</ul>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<!----//top-header---->
-			<!---top-header-nav---->
-			<div class="top-header-nav"> 
-			<!----start-top-nav---->
-			 <nav class="top-nav main-menu">
-					<ul class="top-nav">
-						<li><a href="products.html">Biografii si Memorii</a><span> </span></li>
-						<li><a href="products.html">Carti de specialitate</a><span> </span></li>
-						<li><a href="products.html">Fictiune</a><span> </span></li>
-						<li><a href="products.html">Carti pentru copii</a><span> </span></li>
-						<li><a href="products.html">Dictionare si enciclopedii</a></li>
-						<div class="clearfix"> </div>
-					</ul>
-					<a href="#" id="pull"><img src="images/nav-icon.png" title="menu"></a>
-			  </nav>
-			  <!----End-top-nav---->
-			  <!---top-header-search-box--->
-			  <div class="top-header-search-box">
-			  	
-			  </div>
-			  <!---top-header-search-box--->
-						<div class="clearfix"> </div>
-			</div>
-		</div>
-			<!--//top-header-nav---->
-			<!----start-slider-script---->
-			<script src="js/responsiveslides.min.js"></script>
-			 <script>
-			    // You can also use "$(window).load(function() {"
-			    $(function () {
-			      // Slideshow 4
-			      $("#slider4").responsiveSlides({
-			        auto: true,
-			        pager: true,
-			        nav: true,
-			        speed: 500,
-			        namespace: "callbacks",
-			        before: function () {
-			          $('.events').append("<li>before event fired.</li>");
-			        },
-			        after: function () {
-			          $('.events').append("<li>after event fired.</li>");
-			        }
-			      });
-			
-			    });
-			  </script>
-			<!----//End-slider-script---->
-			<!-- Slideshow 4 -->
-			<div class="col-md-4"></div>
-			<div class="col-md-6">
-				<div id="top" class="callbacks_container" style="max-width: 840px; margin-left: 0 auto!important;width:800px;">
-			      <ul class="rslides callbacks callbacks1" id="slider4">
-			        <li class="callbacks1_on" style="display: block; transition: opacity 500ms ease-in-out 0s; float: left; position: relative; opacity: 1; z-index: 2;" id="callbacks1_s0">
-			          <img src="of1.jpg" alt="">
-			          <div class="caption">
-			          	
-			          </div>
-			        </li>
-			        <li class="" style="display: list-item; transition: opacity 500ms ease-in-out 0s; float: none; position: absolute; opacity: 0; z-index: 1;" id="callbacks1_s1">
-			          <img src="of2.jpg" alt="">
-			          <div class="caption">
-			          	
-			          </div>
-			        </li>
-			        <li class="" style="display: list-item; transition: opacity 500ms ease-in-out 0s; float: none; position: absolute; opacity: 0; z-index: 1;" id="callbacks1_s2">
-			          <img src="of3.jpg" alt="">
-			           <div class="caption">
-			           	
-			          </div>
-			        </li>
-			      </ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2 callbacks_here"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3 callbacks_here"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2 callbacks_here"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul>
-			    </div>
-			    <div class="clearfix"> </div>
-			<!----- //End-slider---->
-			</div>
-			<div class="col-md-4"></div>
-			    
-			<!----content---->
-				<div class="content">
-					<div class="container">
-				<!---top-row--->
-								
-						
-			
-				
-				</div>
-				<!---top-row--->
-				<div class="container"> 
-				<!----speical-products---->
-				
-				<!---//speical-products---->
-				</div>
-			<!----content---->
-			<!----footer--->
-			<div class="footer">
-				<div class="container">
-					<div class="row footer-logo">
-						<a href="index.html"><img src="l1.gif" title="brand-logo" class="img-responsive"></a>
-					</div>
-					
-					<div class="row footer-social">
-						<ul class="unstyled-list list-inline">
-							<li><a class="pin" href="#"><span> </span></a></li>
-							<li><a class="twitter" href="#"><span> </span></a></li>
-							<li><a class="facebook" href="#"><span> </span></a></li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			 </div>
-			 <div class="clearfix"> </div>
-			<!---//footer--->
-			<!---copy-right--->
-					
-			<!--//copy-right--->
-		</div>
-		<!----container---->
-	
+<html>
+<head>
+    <title>Bine ai venit la Doria Bookstore</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- bxSlider Javascript file -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Custom Theme files -->
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!---- start-smoth-scrolling---->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<a style="display: inline;" href="#" id="toTop">To Top</a><a href="#" id="toTop">To Top</a><a href="#" id="toTop">To Top</a><a href="#" id="toTop">To Top</a><a href="#" id="toTop">To Top</a><a href="#" id="toTop">To Top</a><a href="#" id="toTop">To Top</a></body></html>
+    <!----webfonts--->
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <!---//webfonts--->
+    <!----start-top-nav-script---->
+    <script>
+        $(function () {
+            var pull = $('#pull');
+            menu = $('nav ul');
+            menuHeight = menu.height();
+            $(pull).on('click', function (e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            $(window).resize(function () {
+                var w = $(window).width();
+                if (w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+        });
+    </script>
+    <!----//End-top-nav-script---->
+</head>
+<body>
+    <!----container---->
+    <div class="container">
+        <!----top-header---->
+        <div class="top-header">
+            <div class="logo">
+                <a href="index.html"><img src="logo2.gif" title="brandlogo" height="150" width="250"></a>
+            </div>
+            <div class="top-header-info">
+                <div class="cart-details">
+                    <div class="add-to-cart">
+                        <ul class="unstyled-list list-inline">
+                            <li>
+                                <span class="cart"> </span>
+                                <ul class="cart-sub">
+                                    <li><p>0 Products</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="login-rigister">
+                        <ul class="unstyled-list list-inline">
+                            <li><a class="login" href="#">Login</a></li>
+                            <li><a class="rigister" href="#">REGISTER <span> </span></a></li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <!----//top-header---->
+        <!---top-header-nav---->
+        <div class="top-header-nav">
+            <!----start-top-nav---->
+            <nav class="top-nav main-menu">
+                <ul class="top-nav">
+                    <li><a href="products.html">Biografii si Memorii</a><span> </span></li>
+                    <li><a href="products.html">Carti de specialitate</a><span> </span></li>
+                    <li><a href="products.html">Fictiune</a><span> </span></li>
+                    <li><a href="products.html">Carti pentru copii</a><span> </span></li>
+                    <li><a href="products.html">Dictionare si enciclopedii</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <a href="#" id="pull"><img src="images/nav-icon.png" title="menu"></a>
+            </nav>
+            <!----End-top-nav---->
+            <!---top-header-search-box--->
+            <div class="top-header-search-box">
+
+            </div>
+            <!---top-header-search-box--->
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!--//top-header-nav---->
+    <!----start-slider-script---->
+    
+    <!----//End-slider-script---->
+    <!-- Slideshow 4 -->
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div id="top" class="callbacks_container" style="max-width: 840px; margin-left: 0 auto!important;">
+            <ul class="rslides callbacks callbacks1" id="slider4">
+                <li class="callbacks1_on" style="display: block; transition: opacity 500ms ease-in-out 0s; float: left; position: relative; opacity: 1; z-index: 2;" id="callbacks1_s0">
+                    <img src="of1.jpg" alt="">
+                    <div class="caption">
+
+                    </div>
+                </li>
+                <li class="" style="display: list-item; transition: opacity 500ms ease-in-out 0s; float: none; position: absolute; opacity: 0; z-index: 1;" id="callbacks1_s1">
+                    <img src="of2.jpg" alt="">
+                    <div class="caption">
+
+                    </div>
+                </li>
+                <li class="" style="display: list-item; transition: opacity 500ms ease-in-out 0s; float: none; position: absolute; opacity: 0; z-index: 1;" id="callbacks1_s2">
+                    <img src="of3.jpg" alt="">
+                    <div class="caption">
+
+                    </div>
+                </li>
+            </ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2 callbacks_here"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3 callbacks_here"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2 callbacks_here"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul><a href="#" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="#" class="callbacks_nav callbacks1_nav next">Next</a><ul class="callbacks_tabs callbacks1_tabs"><li class="callbacks1_s1 callbacks_here"><a href="#" class="callbacks1_s1">1</a></li><li class="callbacks1_s2"><a href="#" class="callbacks1_s2">2</a></li><li class="callbacks1_s3"><a href="#" class="callbacks1_s3">3</a></li></ul>
+        </div>
+        <div class="clearfix"> </div>
+        <!----- //End-slider---->
+    </div>
+    <div class="col-md-2"></div>
+
+    <!----content---->
+    <div class="content">
+        <div class="container">
+            <!---top-row--->
+        </div>
+        <!---top-row--->
+        <div class="container">
+            <!----speical-products---->
+            <!---//speical-products---->
+    </div>
+    <!----content---->
+    <!----footer--->
+    <div class="footer">
+        <div class="container">
+            <div class="row footer-logo">
+                <a href="index.html"><img src="l1.gif" title="brand-logo" class="img-responsive"></a>
+            </div>
+
+            <div class="row footer-social">
+                <ul class="unstyled-list list-inline">
+                    <li><a class="pin" href="#"><span> </span></a></li>
+                    <li><a class="twitter" href="#"><span> </span></a></li>
+                    <li><a class="facebook" href="#"><span> </span></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+    <!---//footer--->
+    <!---copy-right--->
+    <!--//copy-right--->
+    </div>
+    <!----container---->
+
+    <a style="display: inline;line-height: 25px;width: 40px;height: 60px;z-index: 1000;" href="#" id="toTop">aaaaaaaa</a>
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
