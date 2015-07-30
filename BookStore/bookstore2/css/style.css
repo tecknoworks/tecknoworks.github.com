@@ -1,9 +1,3 @@
-/*--
-Author: W3layouts	
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
 html, body{
   	font-family: 'Lato', sans-serif;
     font-size: 100%;
@@ -60,12 +54,11 @@ body a{
 	float:right;
 }
 span.cart{
-	width: 38px;
-	height: 35px;
+	width: 30px;
+	height: 24px;
 	display: inline-block;
 	background: url(../images/cart.png) no-repeat 0px 6px;
-	border-right: 1px solid #DDD9D9;
-	padding-right: 0.8em;
+		padding-right: 1em;
 	margin-top: 0.3em;
 }
 ul.cart-sub{
@@ -83,9 +76,11 @@ ul.cart-sub{
 ul.cart-sub{
 	background:#FFF;
 	padding:0.5em;
+	font-size:90%;
 }
 ul.cart-sub li p{
 	color:#EF3626;
+
 }
 .login-rigister li a.login{
 	color: #444444;
@@ -757,7 +752,7 @@ img.r-img{
 /*----footer----*/
 .footer{
 	background:#F2262C;
-	padding:0.6em 0;
+	padding: 0;
 }
 .footer-links li{
 	position:relative;
@@ -788,7 +783,7 @@ img.r-img{
 	margin-top:0.2em;
 }
 .footer-social ul{
-	margin:1em 0 0 0;
+	margin:0.1em 0 0 0;
 	align:right;
 	padding:0;
 }

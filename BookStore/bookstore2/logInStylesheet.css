@@ -7,7 +7,7 @@
     left: 0;
     display:none;
     text-align:center;
-    z-index:3;
+    z-index:5;
     overflow: hidden;
 }
 #fundalOverlay
@@ -47,7 +47,7 @@
     margin: 0px 0px 14px!important;
     margin-top:18px!important;
 }
-#ics, #ics2
+#ics, #ics2, #ics3
 {
     width:20px; 
     float:right; 
@@ -60,4 +60,14 @@
     color: white;
 }
 
-
+#inreus
+{
+    position: absolute;
+    z-index: 4;
+    width: 30%;
+    /* height: 10px; */
+    color: white !important;
+    top: 0;
+    background-color: #2AC722;
+    display: none;
+}

@@ -9,16 +9,25 @@ var showName;
 var idUser="";
 var storageData = {api_key: "", secret: "", id: "", basket:[]}
 var idStorage;
-
+var basket=[];
 var hereIstheUser = 'false';
     
-app.controller('userIn', function ($scope) {
+app.controller('userIn', function ($scope,$rootScope) {
+    window.$rootScope = $rootScope;
     $scope.init = function () {
         var userData = getFromStorage('user');
         if (userData != null && userData.length > 0)
         {
             storageData = JSON.parse(getFromStorage('user'));
-            storageData.id = idStorage;
+            var basketStorageData = JSON.parse(getFromStorage('prodCos'));
+            for(var idx = 0; idx <= basketStorageData.length; idx++)
+            {
+                basket.push({productId: basketStorageData[idx].productId, productName: basketStorageData[idx].productName, productPrice: basketStorageData[idx].productPrice});
+            }
+            /*$scope.$on('idPutStorage', function(event, args){
+                basket = args;
+               debugger;
+            });*/
             var key = JSON.parse(userData).api_key;
             if (key && key.length > 0)
             {
@@ -33,10 +42,12 @@ app.controller('userIn', function ($scope) {
     };
 });
     
-app.controller('itemsController', function($scope){
+app.controller('itemsController', function($scope, $rootScope){
+    window.$rootScope = $rootScope;
     $scope.testName = "testName";
-    //basket.push({id: "", name:"", price: "", nrClick: ""});
-    $scope.basket = [];
+    $scope.basketShow = basket;
+    debugger;
+    var $overlayCos = $('#overlayCart').show();
 
     $scope.products = [
             {
@@ -295,7 +306,7 @@ app.controller('itemsController', function($scope){
                 price: 5.25,
                 category: 'copii',
             },
-        {
+            {
                id: 33,
                title: 'Enciclopedia lumii pentru copii',
                author: 'Corint',
@@ -383,36 +394,34 @@ app.controller('itemsController', function($scope){
 
         $scope.total = function() {
             var total = 0;
-            angular.forEach($scope.basket, function(item) {
-                total += item.qty * item.cost;
+            angular.forEach($scope.basketShow, function(item) {
+                total += item.productPrice;
             })
-
             return total;
         }
         
         $scope.insertItemDB = function(productId, productName, productPrice) {
             var productDetails = {productId, productName, productPrice};
-            $scope.basket.push(productDetails);
-            saveToStorage('prodCos',JSON.stringify($scope.basket));
+            basket.push(productDetails);
+            saveToStorage('prodCos',JSON.stringify(basket));
             var dataForLogin = {api_key:storageData.api_key, secret:storageData.secret};
             if(storageData.api_key != "", storageData.secret != "", storageData.id != ""){
-                var jObj = {id: storageData.id, api_key: storageData.api_key, secret: storageData.secret, basket: $scope.basket};
+                var jObj = {id: storageData.id, api_key: storageData.api_key, secret: storageData.secret, basket: basket};
                 jNorthPole.putStorage(jObj, function(data){
                         debugger;
-                        idStorage=data.id;
+                    //$scope.$emit('idPutStorage', basket);
                     });
+              
                 /*jNorthPole.getStorage(dataForLogin, function(data){
                   //  debugger;
                     var toateProd = JSON.parse(getFromStorage('prodCos'))
-                    
-                    
                 });*/
         }}
         
         $scope.deleteItemDB = function(productId, productName, productPrice){
         
             jNorthPole.deleteStorage(dataForLogin, function(data){
-                
+                $scope.basket = [];
             });
         
         }
@@ -421,7 +430,8 @@ app.controller('itemsController', function($scope){
     
 
 
-app.controller('pageController', function($scope){
+app.controller('pageController', function($scope,$rootScope){
+    window.$rootScope = $rootScope;
     $scope.model = {loginData: {api_key: "",secret: ""}, 
                     registerData: {api_key: "", secret: "", basket:[{name:"", price:"", qty:""}]},
                     
