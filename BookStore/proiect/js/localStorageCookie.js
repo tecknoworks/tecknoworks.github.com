@@ -1,5 +1,4 @@
-   
-//check for IE8 or less
+   //check for IE8 or less
     if(($.browser.msie) && parseFloat($.browser.version)&lt8)
     {
         $("html").addClass('oldIE');
@@ -13,15 +12,12 @@
                      
 
     //daca e browser vechi se foloseste COOKIE
-
 if(($('html')).hasClass('oldIE')){
-   
     var app = angular.module('storeApp', ['ngCookies']);
     var cookieName = "DoriaBookStoreUser"; 
     var showName;
     
 app.controller('pageController', ['$scope','$cookies', function($scope,$cookies) {
-    
     var existingCookie = $cookies.get(cookieName);
     //debugger;
         
@@ -39,9 +35,6 @@ app.controller('pageController', ['$scope','$cookies', function($scope,$cookies)
                     registerData: {api_key:"", secret:""},
                     userProfile: {arata: 'false'}
                     };
-    
-     //$scope.model.loginData.api_key="andi";
-     //$scope.model.loginData.secret="andisecret";
     
                //REGISTER
     $scope.registerUser = function () {
@@ -68,11 +61,9 @@ app.controller('pageController', ['$scope','$cookies', function($scope,$cookies)
         jNorthPole.getStorage($scope.model.loginData, function(data){
             if (data.length > 0 && data[0].id != undefined && $scope.model.loginData.api_key != '' && $scope.model.loginData.secret != '')
             {
-                //localStorage.setItem('user',JSON.stringify(data));
                 $('#btn-login').hide();
                 $('#btn-logout').show();
                 $scope.model.userProfile.arata = true;
-                //$scope.showName =  JSON.parse(localStorage.getItem('user'))[0];
                 
                 $cookies.put(cookieName, JSON.stringify($scope.model.loginData));
             } 
@@ -90,28 +81,4 @@ app.controller('pageController', ['$scope','$cookies', function($scope,$cookies)
 
         
 }]);
-
-    /*
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60  *60 * 1000));
-        var expires = "expires="+d.toUTCString();
-        document.cookie = cname + "=" + cvalue + "; " + expires;
-    };
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1);
-            if (c.indexOf(name) == 0)   return c.substring(name.length,c.length);
-        }
-        return "";
-    };
-
-    function expireCookie(cname) {
-        setCookie(cname, "", -1);
-    };
-    */
 } //end if

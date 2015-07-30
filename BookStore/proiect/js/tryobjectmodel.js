@@ -8,16 +8,22 @@ var user; // definim o variabila in care sa va stoca apoi prin localStorage
 var showName;
 var idUser="";
 var storageData = {api_key: "", secret: "", id: "", basket:[]}
-
-
+var idStorage;
+var basket=[];
 var hereIstheUser = 'false';
     
-app.controller('userIn', function ($scope) {
+app.controller('userIn', function ($scope,$rootScope) {
+    window.$rootScope = $rootScope;
     $scope.init = function () {
         var userData = getFromStorage('user');
-        storageData = JSON.parse(getFromStorage('user'));
         if (userData != null && userData.length > 0)
         {
+            storageData = JSON.parse(getFromStorage('user'));
+            var basketStorageData = JSON.parse(getFromStorage('prodCos'));
+            for(var idx = 0; idx <= basketStorageData.length; idx++)
+            {
+                basket.push({productId: basketStorageData[idx].productId, productName: basketStorageData[idx].productName, productPrice: basketStorageData[idx].productPrice});
+            }
             var key = JSON.parse(userData).api_key;
             if (key && key.length > 0)
             {
@@ -27,16 +33,16 @@ app.controller('userIn', function ($scope) {
                 $('#btn-logout').show();
                 $('#inreg').hide();
             }
-            //else {$scope.hereIstheUser = true}
         }
     };
 });
     
-app.controller('itemsController', function($scope){
+app.controller('itemsController', function($scope, $rootScope){
+    window.$rootScope = $rootScope;
     $scope.testName = "testName";
-    var basket = [];
-    basket.push({id: "", name:"", price: "", nrClick: ""});
-    $scope.basket = basket;
+    $scope.basketShow = basket;
+    debugger;
+    
 
     $scope.products = [
             {
@@ -295,7 +301,7 @@ app.controller('itemsController', function($scope){
                 price: 5.25,
                 category: 'copii',
             },
-        {
+            {
                id: 33,
                title: 'Enciclopedia lumii pentru copii',
                author: 'Corint',
@@ -360,64 +366,37 @@ app.controller('itemsController', function($scope){
                 category: 'dictionare',
             }
         ];
-        
-
-      /* $scope.invoice = {
-            items: [{
-                qty: 10,
-                description: 'item',
-                cost: 9.95}]
-        };
-    
-        $scope.addItem = function() {
-            $scope.invoice.items.push({
-                qty: 1,
-                description: '',
-                cost: 0
-            });
-        },
-
-        $scope.removeItem = function(index) {
-            $scope.invoice.items.splice(index, 1);
-        }, */
 
         $scope.total = function() {
             var total = 0;
-            angular.forEach($scope.invoice.items, function(item) {
-                total += item.qty * item.cost;
+            angular.forEach($scope.basketShow, function(item) {
+                total += item.productPrice;
             })
-
             return total;
         }
         
         $scope.insertItemDB = function(productId, productName, productPrice) {
-            var produseInCos = {productId, productName, productPrice};
-            saveToStorage('prodCos',JSON.stringify(produseInCos));
+            var productDetails = {productId, productName, productPrice};
+            basket.push(productDetails);
+            saveToStorage('prodCos',JSON.stringify(basket));
             var dataForLogin = {api_key:storageData.api_key, secret:storageData.secret};
             if(storageData.api_key != "", storageData.secret != "", storageData.id != ""){
-                jNorthPole.getStorage(dataForLogin, function(data){
-                  //  debugger;
-                    var jObj = {id: storageData.id, api_key: storageData.api_key, secret: storageData.secret, basket: produseInCos};
-                    jNorthPole.putStorage(jObj, function(){
-                      // debugger;
-                   
-                    });
+                var jObj = {id: storageData.id, api_key: storageData.api_key, secret: storageData.secret, basket: basket};
+                jNorthPole.putStorage(jObj, function(data){
                 });
         }}
         
         $scope.deleteItemDB = function(productId, productName, productPrice){
         
-            jNorthPole.deleteStorage(dataForLogin, function(){
-                
+            jNorthPole.deleteStorage(dataForLogin, function(data){
+                $scope.basket = [];
             });
         
         }
 }); //end controller*/
-        
-    
 
-
-app.controller('pageController', function($scope){
+app.controller('pageController', function($scope,$rootScope){
+    window.$rootScope = $rootScope;
     $scope.model = {loginData: {api_key: "",secret: ""}, 
                     registerData: {api_key: "", secret: "", basket:[{name:"", price:"", qty:""}]},
                     
@@ -425,10 +404,7 @@ app.controller('pageController', function($scope){
                     };
     
     
-     //$scope.model.loginData.api_key="andi";
-     //$scope.model.loginData.secret="andisecret";
-    
-               //REGISTER
+           //REGISTER
     $scope.registerUser = function () {
     $scope.model.registerData.api_key = $scope.newUser;
     $scope.model.registerData.secret = $scope.newpassword;  
@@ -436,10 +412,6 @@ app.controller('pageController', function($scope){
             if (data != undefined && data != null && data.api_key!=""){
                 jNorthPole.createStorage($scope.model.registerData, function (data) {
                     if (data != undefined){
-                       // storageData.api_key = $scope.username;
-                       // storageData.secret = $scope.password;
-                        
-                        
                         $('#overlayNewClient').hide();
                         $("#overlay").show();
                         $('#inreus').show();
@@ -456,7 +428,7 @@ app.controller('pageController', function($scope){
         $scope.model.loginData.secret = $scope.password;
         $scope.model.userProfile.isLoggedIn = true;
         jNorthPole.getStorage($scope.model.loginData, function(data){
-            if (data.length > 0 && data[0].id != undefined && !data.error && $scope.model.loginData.api_key != '' && $scope.model.loginData.secret != '')
+            if (data.length > 0 && data[0].id != undefined && $scope.model.loginData.api_key != '' && $scope.model.loginData.secret != '')
             {
                 debugger;
                 
@@ -476,10 +448,8 @@ app.controller('pageController', function($scope){
                 $('#buttonLoginFirst').hide();
                 $overlay.hide("slow");
                 $scope.model.userProfile.isLoggedIn = true;
-                $scope.showName =  JSON.parse(getFromStorage('user')); 
-                //$('#userIsLoggedIn').show();
+                $scope.showName =  JSON.parse(getFromStorage('user'));
             } 
-           // else{$scope.model.userProfile.isLoggedIn = 'false';};
         }); //end getStorage
      }; //end loginUser
     
@@ -489,7 +459,6 @@ app.controller('pageController', function($scope){
             $('#btn-logout').hide();
             $('#buttonLoginFirst').show();
             $('#inreg').show();
-            //document.getElementById("loginform").reset();
             $('#hereIstheUser').hide();
             $scope.model.userProfile.isLoggedIn = false;
         };
