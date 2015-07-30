@@ -36,11 +36,12 @@ window.jNorthPole = {
       });
     },
     
-    createUser: function(api_key, secret, success, failure) {
+    createUser: function(api_key, secret, adresa, success, failure) {
           var jsonObj;
           jsonObj = {
                 'api_key': api_key,
-                'secret': secret
+                'secret': secret,
+                'adresa': adresa
             };
           return this.genericRequest(jsonObj, 'POST', 'user', success, failure);
     },
