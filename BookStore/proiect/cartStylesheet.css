@@ -1,0 +1,42 @@
+#overlayCart
+{
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    display:none;
+    text-align:center;
+    z-index:3;
+    overflow: hidden;
+    color:#FFF;
+}
+
+#overlayCartFundal
+{
+    background-image: url("tumblr.jpg");
+    background-size: 100%;
+    opacity: 0.5;
+    width: 100%;
+    height:100%;
+}
+
+#cosContent
+{
+    background-image: url("Blur-4.png");
+    /*background-color: rgb(126, 126, 126);*/
+    margin: 0px auto;
+    width: 50%;
+    height: 352px;
+    margin-top: 80px;
+    border-radius: 5px;
+    position: absolute;
+    top:0;
+    right:0; left:0;
+    box-shadow: 2px 0px 53px 12px rgba(0,0,0,0.64);
+}
+
+#tableCos td
+{
+    border: 1px solid black;
+}

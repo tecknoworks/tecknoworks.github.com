@@ -1,0 +1,61 @@
+
+#overlayNewClient
+{
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    display:none;
+    text-align:center;
+    z-index:5;
+    overflow: hidden;
+}
+#fundalOverlayNewClient
+{
+    background-image: url("tumblr.jpg");
+    background-size: 100%;
+    opacity: 0.5;
+    width: 100%;
+    height:100%;
+}
+#formdivN
+{
+    box-shadow:1px 0px 31px 1px rgba(0,0,0,0.64);
+    background-image: url("Blur-4.png");
+    /*background-color: rgb(126, 126, 126);*/
+    margin: 0px auto;
+    width: 380px;
+    height: 365px;
+    margin-top: 80px;
+    border-radius: 5px;
+    position: absolute;
+    top:0;
+    right:0; left:0;
+}
+#inregReusita
+{
+    background-color: green;
+    box-shadow:1px 0px 31px 1px rgba(0,0,0,0.64);
+    margin: 0px auto;
+    width:350px;
+    top: 16px; left: 0; right: 0;
+    position: absolute;
+    border-radius: 5px;
+    
+}
+#inregReusita p
+{
+    color: #fff;
+    padding: 20px;
+}
+#inregNereusita
+{
+    background-color: red;
+    box-shadow:1px 0px 31px 1px rgba(0,0,0,0.64);
+    margin: 0px auto;
+    width:350px;
+    top: 16px; left: 0; right: 0;
+    position: absolute;
+    border-radius: 5px;
+}

@@ -1,0 +1,11 @@
+function MyController($scope, $routeParams, MyService) {
+
+    // below both lines get store and cart from service “MyService”
+    $scope.store = MyService.store;
+    $scope.cart = MyService.cart;
+    if ($routeParams.productSku != null) {
+        $scope.product = $scope.store.getProduct($routeParams.productSku);
+    }
+}
+
+

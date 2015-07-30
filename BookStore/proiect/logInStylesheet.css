@@ -1,0 +1,73 @@
+#overlay
+{
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    display:none;
+    text-align:center;
+    z-index:5;
+    overflow: hidden;
+}
+#fundalOverlay
+{
+    background-image: url("tumblr.jpg");
+    background-size: 100%;
+    opacity: 0.5;
+    width: 100%;
+    height:100%;
+}
+
+#formdiv
+{
+    background-image: url("Blur-4.png");
+    /*background-color: rgb(126, 126, 126);*/
+    margin: 0px auto;
+    width: 380px;
+    height: 352px;
+    margin-top: 80px;
+    border-radius: 5px;
+    position: absolute;
+    top:0;
+    right:0; left:0;
+    box-shadow: 2px 0px 53px 12px rgba(0,0,0,0.64);
+}
+
+#formdiv h2, #formdivN h2
+{
+    border-bottom: 1px solid #F30B0B;
+    padding-bottom: 10px;
+    color: #fff;
+    margin-top:12px;
+}
+#pswForgotpar
+{
+    color: #fff!important;
+    margin: 0px 0px 14px!important;
+    margin-top:18px!important;
+}
+#ics, #ics2, #ics3
+{
+    width:20px; 
+    float:right; 
+    position:absolute; 
+    top:20px; 
+    right:18px;
+}
+#overlay span
+{
+    color: white;
+}
+
+#inreus
+{
+    position: absolute;
+    z-index: 4;
+    width: 30%;
+    /* height: 10px; */
+    color: white !important;
+    top: 0;
+    background-color: #2AC722;
+    display: none;
+}
