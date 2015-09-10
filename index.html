@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>tkw-dream</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <script id="vs" type="x-shader/x-vertex">
+varying vec2 vUv;
+
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+}
+    </script>
+
+    <script id="fs" type="x-shader/x-fragment">
+uniform sampler2D map;
+varying vec2 vUv;
+
+void main() {
+  float depth = gl_FragCoord.z / gl_FragCoord.w;
+  gl_FragColor = texture2D( map, vUv );
+  gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+}
+    </script>
+
+    <script src="bower_components/coffee-engine/build/coffee-engine-3d.js"></script>
+
+    <script src="js/models.js"></script>
+    <script src="js/scenes.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
