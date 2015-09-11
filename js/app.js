@@ -11,7 +11,7 @@ config.raiseDelay = 5000;
 
 camera = new THREE.PerspectiveCamera(30, config.width / config.height, 1, 10000);
 
-camera.position.set(0, -100, 6000);
+camera.position.set(0, -120, 6100);
 
 engine = new Engine3D();
 

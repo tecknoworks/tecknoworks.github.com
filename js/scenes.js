@@ -14,17 +14,17 @@ TkwIntro = (function(superClass) {
       x: 0,
       y: 10,
       z: 5700,
-      sX: 26.4,
-      sY: 3.65
+      sX: 73.7,
+      sY: 10.2
     });
     this.scene.add(this.text.mesh);
     this.plane = new Paper({
       key: 'plane',
-      x: 15,
-      y: 12,
+      x: -250,
+      y: -260,
       z: 5700,
-      sX: 8,
-      sY: 5.25
+      sX: 22.3,
+      sY: 14.7
     });
     this.scene.add(this.plane.mesh);
     this.cloud = new Cloud();
@@ -46,12 +46,12 @@ TkwIntro = (function(superClass) {
       return function() {
         var tween;
         return tween = new TWEEN.Tween({
-          x: -50,
-          y: -60
+          x: -250,
+          y: -260
         }).to({
-          x: 15,
-          y: 12
-        }, 4000).easing(TWEEN.Easing.Circular.In).onUpdate(function() {
+          x: 41,
+          y: 15
+        }, 4000).easing(TWEEN.Easing.Elastic.Out).onUpdate(function() {
           scene.plane.mesh.position.x = this.x;
           return scene.plane.mesh.position.y = this.y;
         }).start();
