@@ -8,28 +8,37 @@ TkwIntro = (function(superClass) {
 
   function TkwIntro() {
     TkwIntro.__super__.constructor.call(this);
-    this.start_time = new Date().getTime();
+    this.cloud = new Cloud({
+      cloudSize: config.cloudSize / 2
+    });
+    this.scene.add(this.cloud.mesh);
+    this.cloud2 = new Cloud({
+      cloudSize: config.cloudSize / 2
+    });
+    this.cloud2.mesh.position.z -= config.cloudSize / 2;
+    this.scene.add(this.cloud2.mesh);
     this.text = new Paper({
       key: 'text',
       x: 0,
       y: 10,
-      z: 5700,
+      z: config.cloudSize / 2 - 450,
       sX: 73.7,
       sY: 10.2
     });
     this.scene.add(this.text.mesh);
     this.plane = new Paper({
       key: 'plane',
-      x: -250,
-      y: -260,
-      z: 5700,
+      x: Paper.FAR_AWAY,
+      y: Paper.FAR_AWAY,
+      z: config.cloudSize / 2 - 450,
+      tX: 41,
+      tY: 15,
       sX: 22.3,
       sY: 14.7
     });
     this.scene.add(this.plane.mesh);
-    this.cloud = new Cloud();
-    this.scene.add(this.cloud.mesh);
     this.loaded = true;
+    SoundManager.get().play('intro');
     setTimeout((function(_this) {
       return function() {
         var tween;
@@ -37,7 +46,7 @@ TkwIntro = (function(superClass) {
           y: camera.position.y
         }).to({
           y: 20
-        }, 5000).easing(TWEEN.Easing.Exponential.Out).onUpdate(function() {
+        }, config.raiseDuration).easing(TWEEN.Easing.Exponential.Out).onUpdate(function() {
           return camera.position.y = this.y;
         }).start();
       };
@@ -45,13 +54,7 @@ TkwIntro = (function(superClass) {
     setTimeout((function(_this) {
       return function() {
         var tween;
-        return tween = new TWEEN.Tween({
-          x: -250,
-          y: -260
-        }).to({
-          x: 41,
-          y: 15
-        }, 4000).easing(TWEEN.Easing.Elastic.Out).onUpdate(function() {
+        return tween = new TWEEN.Tween(_this.plane.farAwayPosition()).to(_this.plane.targetPosition(), config.raiseDuration + 1000).easing(TWEEN.Easing.Elastic.Out).onUpdate(function() {
           scene.plane.mesh.position.x = this.x;
           return scene.plane.mesh.position.y = this.y;
         }).start();
@@ -64,10 +67,17 @@ TkwIntro = (function(superClass) {
     if (!this.loaded) {
       return;
     }
-    budge = 50 * tpf;
+    SoundManager.get().updateGlobalVolume(0.2);
+    budge = config.flightSpeed * tpf;
     camera.position.z -= budge;
     this.text.mesh.position.z -= budge;
-    return this.plane.mesh.position.z -= budge;
+    this.plane.mesh.position.z -= budge;
+    if (camera.position.z < this.cloud.mesh.position.z) {
+      this.cloud.mesh.position.z -= config.cloudSize;
+    }
+    if (camera.position.z < this.cloud2.mesh.position.z) {
+      return this.cloud2.mesh.position.z -= config.cloudSize;
+    }
   };
 
   TkwIntro.prototype.doMouseEvent = function(event, raycaster) {};

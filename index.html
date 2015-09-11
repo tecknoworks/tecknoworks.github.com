@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
+    <meta name="description" content="Tecknoworks Dream">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>tkw-dream</title>
+
+    <title>Tecknoworks Dream</title>
 
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+
     <script id="vs" type="x-shader/x-vertex">
 varying vec2 vUv;
 
@@ -26,6 +28,8 @@ void main() {
   gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
 }
     </script>
+  </head>
+  <body>
 
     <script src="bower_components/coffee-engine/build/coffee-engine-3d.js"></script>
 
