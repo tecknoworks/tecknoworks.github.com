@@ -2944,31 +2944,31 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4; }
+  background-color: #47959f;
+  border-color: #3f848d; }
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #286090;
-    border-color: #122b40; }
+    background-color: #37747c;
+    border-color: #183235; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74; }
+    background-color: #37747c;
+    border-color: #2c5d63; }
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74; }
+    background-color: #37747c;
+    border-color: #2c5d63; }
     .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
       color: #fff;
-      background-color: #204d74;
-      border-color: #122b40; }
+      background-color: #2c5d63;
+      border-color: #183235; }
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
-    background-color: #337ab7;
-    border-color: #2e6da4; }
+    background-color: #47959f;
+    border-color: #3f848d; }
   .btn-primary .badge {
-    color: #337ab7;
+    color: #47959f;
     background-color: #fff; }
 
 .btn-success {
@@ -5826,11 +5826,18 @@ button.close {
 .accent {
   color: #36939a; }
 
+.subscribe {
+  color: #ffffff;
+  background-color: #47959f; }
+
 .copyright {
+  color: #ffffff;
   background-color: #595959; }
 
-.subscribe {
-  background-color: #47959f; }
+.pan {
+  padding: 15px; }
+  .pan h3 {
+    color: white; }
 
 .pan-yellow {
   background-color: #cdcd5d; }
@@ -5840,5 +5847,8 @@ button.close {
 
 .pan-orange {
   background-color: #ffa36a; }
+
+.content-stuff {
+  padding-bottom: 50px; }
 
 /*# sourceMappingURL=app.css.map */

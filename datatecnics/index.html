@@ -23,75 +23,12 @@
 
     <div class="container">
       <span class="pull-right">
-        menu
+        <a ng-href="#home">home</a>
+        <a ng-href="#about">about</a>
       </span>
     </div>
 
-    <div class="container-fluid">
-      <div ng-controller="CarouselDemoCtrl">
-        <div>
-          <uib-carousel interval="options.interval" no-wrap="options.noWrapSlides">
-            <uib-slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="{{slide.image}}" style="margin:auto;">
-              <div class="carousel-caption">
-                <h4>Slide {{$index}}</h4>
-                <p>{{slide.text}}</p>
-              </div>
-            </uib-slide>
-          </uib-carousel>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="col-md-6">
-        <h1>We are <span class="accent">Datatecnics</span></h1>
-        <p>
-          Datatecnics is a multi-award winning smart infrastructure company pioneering the way in the Industrial Internet of Things (IIOT).We are creating, developing, and commercializing technologies with the capability to transform the way the world interacts with its physical infrastructure. We change what is passive into truly smart infrastructure capable of autonomous communication delivering for our users substantial productivity, efficiency, and operational gains across the breadth of industry.
-        </p>
-        <p>
-          Our disruptive innovations herald what we believe to be the first true breakthrough products in the IIOT space.
-        </p>
-        <p>
-          These technologies will embed intelligence within critical infrastructure, protecting assets worth trillions of dollars and in doing so, will deliver a new era of economic growth and competitiveness in water, energy and beyond.
-        </p>
-        <p>
-          With our founder’s 30 years of experience in delivering innovation, our solutions are unique, carefully designed and meticulously engineered ensuring maximal benefits and sustainability by unlocking previously untapped capabilities.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <h1>Our values</h1>
-        <div class="row" ng-repeat="n in [1, 2, 3, 4]">
-          <div class="col-md-2">
-            <img src="images/ic_twitter.png" alt="" class="pull-left"/>
-          </div>
-          <div class="col-md-10">
-            <h3>Quality</h3>
-            <p>Everything quality</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="col-md-4 pan-yellow">
-        <h3>connectivity</h3>
-        <p>IOT</p>
-        <p>Some more text</p>
-        <button type="button" class="btn btn-primary">read more</button>
-      </div>
-      <div class="col-md-4 pan-blue">
-        <h3>connectivity</h3>
-        <p>IOT</p>
-        <p>Some more text</p>
-        <button type="button" class="btn btn-primary">read more</button>
-      </div>
-      <div class="col-md-4 pan-orange">
-        <h3>connectivity</h3>
-        <p>IOT</p>
-        <p>Some more text</p>
-        <button type="button" class="btn btn-primary">read more</button>
-      </div>
-    </div>
+    <div class="content-stuff" ng-view></div>
 
     <div class="container-fluid subscribe">
       <div class="container">
@@ -102,7 +39,7 @@
         <div class="col-md-6">
           <input type="text" placeholder="name"/>
           <input type="text" placeholder="email"/>
-          <button type="button" class="btn btn-primary">subscribe</button>
+          <button type="button" class="btn btn-default">subscribe</button>
         </div>
       </div>
     </div>
@@ -124,6 +61,7 @@
     <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app.js"></script>
   </body>
