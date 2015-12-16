@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Datatecnics Corporation</title>
+
+    <link href="app.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      <img src="images/img_logo.png" alt="" />
+    </div>
+    <div class="container">
+      <span class="pull-right">
+        menu
+      </span>
+    </div>
+    <div class="container-fluid">
+      <div ng-controller="CarouselDemoCtrl">
+        <div>
+          <uib-carousel interval="options.interval" no-wrap="options.noWrapSlides">
+            <uib-slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <div class="carousel-caption">
+                <h4>Slide {{$index}}</h4>
+                <p>{{slide.text}}</p>
+              </div>
+            </uib-slide>
+          </uib-carousel>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-6">
+        <h1>We are <span class="accent">Datatecnics</span></h1>
+        <p>
+          Datatecnics is a multi-award winning smart infrastructure company pioneering the way in the Industrial Internet of Things (IIOT).We are creating, developing, and commercializing technologies with the capability to transform the way the world interacts with its physical infrastructure. We change what is passive into truly smart infrastructure capable of autonomous communication delivering for our users substantial productivity, efficiency, and operational gains across the breadth of industry.
+        </p>
+        <p>
+          Our disruptive innovations herald what we believe to be the first true breakthrough products in the IIOT space.
+        </p>
+        <p>
+          These technologies will embed intelligence within critical infrastructure, protecting assets worth trillions of dollars and in doing so, will deliver a new era of economic growth and competitiveness in water, energy and beyond.
+        </p>
+        <p>
+          With our founder’s 30 years of experience in delivering innovation, our solutions are unique, carefully designed and meticulously engineered ensuring maximal benefits and sustainability by unlocking previously untapped capabilities.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h1>Our values<h1>
+          </div>
+        </div>
+        <div class="container-fluid subscribe">
+          <div class="container">
+            scubscribe
+          </div>
+        </div>
+        <div class="container-fluid copyright">
+          <div class="container">
+            copyrigght
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
