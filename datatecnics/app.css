@@ -5813,6 +5813,10 @@ button.close {
 .container {
   text-align: justify; }
 
+.container-fluid {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
 .carousel-control.right {
   background-image: none !important; }
 
@@ -5827,5 +5831,14 @@ button.close {
 
 .subscribe {
   background-color: #47959f; }
+
+.pan-yellow {
+  background-color: #cdcd5d; }
+
+.pan-blue {
+  background-color: #a3cacf; }
+
+.pan-orange {
+  background-color: #ffa36a; }
 
 /*# sourceMappingURL=app.css.map */

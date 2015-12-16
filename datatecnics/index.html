@@ -13,12 +13,20 @@
 
     <div class="container">
       <img src="images/img_logo.png" alt="" />
+      <div class="pull-right">
+        <img src="images/ic_facebook.png" alt="" />
+        <img src="images/ic_twitter.png" alt="" />
+        <img src="images/ic_phone.png" alt="" />
+        <img src="images/ic_mail.png" alt="" />
+      </div>
     </div>
+
     <div class="container">
       <span class="pull-right">
         menu
       </span>
     </div>
+
     <div class="container-fluid">
       <div ng-controller="CarouselDemoCtrl">
         <div>
@@ -34,6 +42,7 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="col-md-6">
         <h1>We are <span class="accent">Datatecnics</span></h1>
@@ -51,18 +60,62 @@
         </p>
       </div>
       <div class="col-md-6">
-        <h1>Our values<h1>
+        <h1>Our values</h1>
+        <div class="row" ng-repeat="n in [1, 2, 3, 4]">
+          <div class="col-md-2">
+            <img src="images/ic_twitter.png" alt="" class="pull-left"/>
+          </div>
+          <div class="col-md-10">
+            <h3>Quality</h3>
+            <p>Everything quality</p>
           </div>
         </div>
-        <div class="container-fluid subscribe">
-          <div class="container">
-            scubscribe
-          </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-4 pan-yellow">
+        <h3>connectivity</h3>
+        <p>IOT</p>
+        <p>Some more text</p>
+        <button type="button" class="btn btn-primary">read more</button>
+      </div>
+      <div class="col-md-4 pan-blue">
+        <h3>connectivity</h3>
+        <p>IOT</p>
+        <p>Some more text</p>
+        <button type="button" class="btn btn-primary">read more</button>
+      </div>
+      <div class="col-md-4 pan-orange">
+        <h3>connectivity</h3>
+        <p>IOT</p>
+        <p>Some more text</p>
+        <button type="button" class="btn btn-primary">read more</button>
+      </div>
+    </div>
+
+    <div class="container-fluid subscribe">
+      <div class="container">
+        <div class="col-md-6">
+          <h1>Subscribe to our press releases</h1>
+          <p>Stay informed about our news and events</p>
         </div>
-        <div class="container-fluid copyright">
-          <div class="container">
-            copyrigght
-          </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="name"/>
+          <input type="text" placeholder="email"/>
+          <button type="button" class="btn btn-primary">subscribe</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid copyright">
+      <div class="container">
+        <img src="images/img_logo.png" alt="" />
+        <span>Copyright© 2010-2015, Datatecnics Corporation: All Rights Reserved</span>
+        <div class="pull-right">
+          <img src="images/ic_facebook.png" alt="" />
+          <img src="images/ic_twitter.png" alt="" />
+          <img src="images/ic_phone.png" alt="" />
+          <img src="images/ic_mail.png" alt="" />
         </div>
       </div>
     </div>
