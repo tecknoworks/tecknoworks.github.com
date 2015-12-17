@@ -14,6 +14,11 @@ This website uses
 
 Will install bower, npm packages and install sass as a ruby gem.
 
+For windows users: You can run all these commands from git bash. Just *cd*
+to the cloned repo location. With the exception of *npm install*, all commands
+need to run in different terminals because they are blocking (meaning you can't
+type commands after unless you cancel with Ctrl+C or Ctrl+D)
+
 ```
 npm install
 ```
@@ -30,7 +35,21 @@ Compile and watch sass
 npm run sass
 ```
 
-You can now serve your this repo from a webserver.
+To start the webserver
+
+```
+npm run server
+```
+
+You can now open [http://localhost:8080/](http://localhost:8080/).
+
+## Gotchas
+
+Js files from *bower_components* have been added to git with *git add -f*
+because they need to be served from gh-pages. If you add more bower
+packages, don't forget to add the required files to the repo as well.
+
+Please don't commit the entire folders, just the JS files you need.
 
 ## Deployment
 
