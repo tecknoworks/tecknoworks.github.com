@@ -63,6 +63,7 @@ should refresh.
 
 ## TODO
 
+* use optimized images
 * fonts size, weight, colors adjustments
 * menu style
 * add links to twitter, fb, etc
