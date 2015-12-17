@@ -2,11 +2,68 @@ app = angular.module('app', ['ui.bootstrap', 'ngAnimate', 'ngRoute', 'ngMap'])
 
 app.config ['$routeProvider', ($routeProvider) ->
   $routeProvider
-    .when('/home',
-      templateUrl: 'partials/home.html'
-      controller: 'HomeCtrl')
     .when('/contact-us',
       templateUrl: 'partials/contact-us.html'
+      controller: 'HomeCtrl')
+    .when('/press',
+      templateUrl: 'partials/press.html'
+      controller: 'HomeCtrl')
+    .when('/corporate',
+      templateUrl: 'partials/corporate.html'
+      controller: 'HomeCtrl')
+    .when('/investor-relations',
+      templateUrl: 'partials/investor-relations.html'
+      controller: 'HomeCtrl')
+    .when('/corporate-governance',
+      templateUrl: 'partials/corporate-governance.html'
+      controller: 'HomeCtrl')
+    .when('/terms-and-conditions',
+      templateUrl: 'partials/terms-and-conditions.html'
+      controller: 'HomeCtrl')
+    .when('/products',
+      templateUrl: 'partials/products.html'
+      controller: 'HomeCtrl')
+    .when('/system-10',
+      templateUrl: 'partials/system-10.html'
+      controller: 'HomeCtrl')
+    .when('/cipps-wx100',
+      templateUrl: 'partials/cipps-wx100.html'
+      controller: 'HomeCtrl')
+    .when('/cipps-ex100',
+      templateUrl: 'partials/cipps-ex100.html'
+      controller: 'HomeCtrl')
+    .when('/what-we-do',
+      templateUrl: 'partials/what-we-do.html'
+      controller: 'HomeCtrl')
+    .when('/overview',
+      templateUrl: 'partials/overview.html'
+      controller: 'HomeCtrl')
+    .when('/pipeline-integrity-assurance',
+      templateUrl: 'partials/pipeline-integrity-assurance.html'
+      controller: 'HomeCtrl')
+    .when('/clear-water',
+      templateUrl: 'partials/clear-water.html'
+      controller: 'HomeCtrl')
+    .when('/our-company',
+      templateUrl: 'partials/our-company.html'
+      controller: 'HomeCtrl')
+    .when('/about-us',
+      templateUrl: 'partials/about-us.html'
+      controller: 'HomeCtrl')
+    .when('/vision-and-values',
+      templateUrl: 'partials/vision-and-values.html'
+      controller: 'HomeCtrl')
+    .when('/corporate-social-responsability',
+      templateUrl: 'partials/corporate-social-responsability.html'
+      controller: 'HomeCtrl')
+    .when('/iiot',
+      templateUrl: 'partials/iiot.html'
+      controller: 'HomeCtrl')
+    .when('/nanotechnology',
+      templateUrl: 'partials/nanotechnology.html'
+      controller: 'HomeCtrl')
+    .when('/home',
+      templateUrl: 'partials/home.html'
       controller: 'HomeCtrl')
     .otherwise redirectTo: '/home'
   return
@@ -33,6 +90,108 @@ app.controller 'HomeCtrl', ($scope) ->
       heading: 'Collaboration'
       text: 'When others see competitors, we see potential partnerships and shared goals'
       img: 'images/ic_collaboration.png'
+    }
+  ]
+
+app.controller 'MenuCtrl', ($scope) ->
+  $scope.menuItems = [
+    {
+      label: 'Contact Us'
+      href: '#contact-us'
+    }
+    {
+      label: 'Press'
+      href: '#press'
+      items: [
+        {
+          label: 'News'
+          href: '#news'
+        }
+      ]
+    }
+    {
+      label: 'Corporate'
+      href: '#corporate'
+      items: [
+        {
+          label: 'Investor Relations'
+          href: '#investor-relations'
+        }
+        {
+          label: 'Corporate Governance'
+          href: '#corporate-governance'
+        }
+        {
+          label: 'Terms And Conditions'
+          href: '#terms-and-conditions'
+        }
+      ]
+    }
+    {
+      label: 'Products'
+      href: '#products'
+      items: [
+        {
+          label: 'System 10'
+          href: '#system-10'
+        }
+        {
+          label: 'CIPPS™ WX100'
+          href: '#cipps-wx100'
+        }
+        {
+          label: 'CIPPS™ EX100'
+          href: '#cipps-ex100'
+        }
+      ]
+    }
+    {
+      label: 'What We Do'
+      href: '#what-we-do'
+      items: [
+        {
+          label: 'Overview'
+          href: '#overview'
+        }
+        {
+          label: 'Pipeline Integrity Assurance'
+          href: '#pipeline-integrity-assurance'
+        }
+        {
+          label: 'Clear Water'
+          href: '#clear-water'
+        }
+      ]
+    }
+    {
+      label: 'Our Company'
+      href: '#our-company'
+      items: [
+        {
+          label: 'About Us'
+          href: '#about-us'
+        }
+        {
+          label: 'Vision And Values'
+          href: '#vision-and-values'
+        }
+        {
+          label: 'Corporate Social Responsability'
+          href: '#corporate-social-responsability'
+        }
+        {
+          label: 'IIOT'
+          href: '#iiot'
+        }
+        {
+          label: 'Nanotechnology'
+          href: '#nanotechnology'
+        }
+      ]
+    }
+    {
+      label: 'Home'
+      href: '#home'
     }
   ]
 

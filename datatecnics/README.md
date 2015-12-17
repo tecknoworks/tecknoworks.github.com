@@ -12,6 +12,8 @@ This website uses
 
 ## Install
 
+NOTE: Make sure you have node.js installed.
+
 Will install bower, npm packages and install sass as a ruby gem.
 
 For windows users: You can run all these commands from git bash. Just *cd*
@@ -58,3 +60,13 @@ To deploy, just commit the compiled files (they should be visible with
 
 After a while, the content on https://tecknoworks.github.io/datatecnics
 should refresh.
+
+## TODO
+
+* fonts size, weight, colors adjustments
+* menu style
+* add links to twitter, fb, etc
+* hover over menu should open it
+* add links to readme more buttons
+* text on some slides is too long
+* responsive fixes

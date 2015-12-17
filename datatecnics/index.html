@@ -15,7 +15,9 @@
       <div class="main">
         <div class="container">
           <div class="row" style="padding-top: 12px">
-            <img src="images/img_logo.png" alt=""/>
+            <a href="#home">
+              <img src="images/img_logo.png" alt="" ng-href="#home"/>
+            </a>
             <div class="pull-right copy-icons">
               <img src="images/ic_facebook.png" alt="" />
               <img src="images/ic_twitter.png" alt="" />
@@ -24,25 +26,12 @@
             </div>
           </div>
 
-          <div class="row menu">
-            <div class="dropdown pull-right">
-              <a data-target="#" ng-href="#contact-us">
-                Contact Us
-              </a>
-            </div>
-            <div class="dropdown pull-right">
-              <a id="dLabel" data-toggle="dropdown" data-target="#" href="/page.html">
-                Our Company
-              </a>
-              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                <li><a href="#">Some action</a></li>
-                <li><a href="#">Some other action</a></li>
+          <div class="row menu" ng-controller="MenuCtrl">
+            <div class="dropdown pull-right" ng-repeat="menu in menuItems">
+              <a data-toggle="dropdown" ng-href="{{menu.href}}">{{menu.label}}</a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" ng-show="menu.items">
+                <li ng-repeat="menuItem in menu.items"><a ng-href="{{menuItem.href}}">{{menuItem.label}}</a></li>
               </ul>
-            </div>
-            <div class="dropdown pull-right">
-              <a data-target="#" ng-href="#home">
-                Home
-              </a>
             </div>
           </div>
         </div>
