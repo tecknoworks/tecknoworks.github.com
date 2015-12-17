@@ -5834,12 +5834,12 @@ html, body {
 
 .main {
   overflow: auto;
-  padding-bottom: 250px; }
+  padding-bottom: 231px; }
 
 .footer {
   position: relative;
-  margin-top: -250px;
-  height: 250px;
+  margin-top: -231px;
+  height: 231px;
   clear: both;
   padding-top: 20px; }
 
@@ -5855,7 +5855,11 @@ html, body {
 .home-wall-of-text .value-icon {
   text-align: right; }
   .home-wall-of-text .value-icon img {
-    padding-top: 24px; }
+    padding-top: 12px; }
+.home-wall-of-text .breather-right {
+  padding-right: 45px; }
+.home-wall-of-text .breather-left {
+  padding-left: 45px; }
 
 .carousel-control.right {
   background-image: none !important; }
@@ -5900,10 +5904,9 @@ html, body {
   color: #ffffff;
   background-color: #595959; }
   .copyright .copy-text {
-    color: #7b7b7b;
-    padding-top: 24px; }
+    padding-top: 16px; }
   .copyright .copy-icons {
-    padding-top: 12px; }
+    padding-top: 8px; }
 
 .pan {
   padding: 15px; }

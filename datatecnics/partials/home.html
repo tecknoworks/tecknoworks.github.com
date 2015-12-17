@@ -16,7 +16,7 @@
 </div>
 
 <div class="container home-wall-of-text">
-  <div class="col-md-6">
+  <div class="col-md-6 breather-right">
     <h2>We are <span class="accent">Datatecnics</span></h2>
     <p>
       Datatecnics is a multi-award winning smart infrastructure company pioneering the way in the Industrial Internet of Things (IIOT).We are creating, developing, and commercializing technologies with the capability to transform the way the world interacts with its physical infrastructure. We change what is passive into truly smart infrastructure capable of autonomous communication delivering for our users substantial productivity, efficiency, and operational gains across the breadth of industry.
@@ -31,11 +31,11 @@
       With our founder’s 30 years of experience in delivering innovation, our solutions are unique, carefully designed and meticulously engineered ensuring maximal benefits and sustainability by unlocking previously untapped capabilities.
     </p>
   </div>
-  <div class="col-md-6">
+  <div class="breather col-md-6 breather-left">
     <h2>Our values</h2>
     <div class="row" ng-repeat="ourValue in ourValues">
       <div class="col-md-2 value-icon">
-        <img src="images/ic_twitter.png" alt="" class=""/>
+        <img ng-src="{{ourValue.img}}" alt="" class=""/>
       </div>
       <div class="col-md-10">
         <h4>{{ourValue.heading}}</h4>

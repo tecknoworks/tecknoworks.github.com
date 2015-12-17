@@ -17,18 +17,22 @@ app.controller 'HomeCtrl', ($scope) ->
     {
       heading: 'Quality'
       text: 'Everything we do will have our hallmark of excellence enriching our clients’ capabilities'
+      img: 'images/ic_quality.png'
     }
     {
       heading: 'Integrity'
       text: 'We will build our business on moral values and give back wherever we can'
+      img: 'images/ic_integrity.png'
     }
     {
       heading: 'Investing in people'
       text: 'We will hire those with the potential to be the best and make them the best'
+      img: 'images/ic_investing_people.png'
     }
     {
       heading: 'Collaboration'
       text: 'When others see competitors, we see potential partnerships and shared goals'
+      img: 'images/ic_collaboration.png'
     }
   ]
 
