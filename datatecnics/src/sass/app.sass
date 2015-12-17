@@ -1,22 +1,32 @@
-$icon-font-path: '../../bower_components/bootstrap-sass/assets/fonts/bootstrap/'
-$background-color: #fafafa
-$text-color: #242021
 $accent-color: #36939a
-
 $gray-color: #595959
 $teal-color: #47959f
-
 $footer-height: 250px
-
-$btn-primary-bg: $teal-color
 
 @import url(//fonts.googleapis.com/css?family=Ubuntu)
 $font-family-sans-serif:  "Ubuntu", sans-serif !default
+$icon-font-path: '../../bower_components/bootstrap-sass/assets/fonts/bootstrap/'
+$background-color: #fafafa
+$text-color: #242021
+$border-radius-base: 45px
+$btn-primary-bg: $teal-color
+$btn-default-bg: $gray-color
+$btn-default-border: $gray-color
+$btn-default-color: $background-color
 
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, button
   text-transform: uppercase
+
+::selection
+  background: $teal-color
+
+::-moz-selection
+  background: $teal-color
+
+html, body
+  height: 100%
 
 .container
   text-align: justify
@@ -24,12 +34,6 @@ h1, h2, h3, h4, h5, h6
 .container-fluid
   padding-left: 0px !important
   padding-right: 0px !important
-
-html, body
-  height: 100%
-
-body
-  // padding-top: 76px
 
 .wrapper
   min-height: 100%
@@ -58,11 +62,23 @@ body
   h2
     padding-bottom: 50px
 
+  .value-icon
+    text-align: right
+    img
+      padding-top: 24px
+
 .carousel-control.right
   background-image: none !important
 
 .carousel-control.left
   background-image: none !important
+
+.carousel-indicators li
+  border: 1px solid $gray-color
+  background-color: $gray-color
+
+.carousel-indicators li.active
+  background-color: $accent-color
 
 .carousel-caption
   padding: 15px
@@ -70,9 +86,7 @@ body
   bottom: auto
   max-width: 400px
   background-color: rgba( $gray-color, .7 )
-
-  h4
-    text-align: left
+  text-align: left
 
   p
     text-align: justify
@@ -85,17 +99,24 @@ body
   padding-top: 25px
   color: #ffffff
   background-color: $teal-color
+  form
+    padding-top: 12px
 
-.vcenter
-  display: inline-block
-  vertical-align: middle
-  float: none
+.copy-icons
+  padding-top: 24px
 
 .copyright
   padding-bottom: 25px
   padding-top: 25px
   color: #ffffff
   background-color: $gray-color
+
+  .copy-text
+    color: darken($background-color, 50)
+    padding-top: 24px
+
+  .copy-icons
+    padding-top: 12px
 
 .pan
   padding: 15px
