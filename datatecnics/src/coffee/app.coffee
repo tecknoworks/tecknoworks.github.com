@@ -1,13 +1,13 @@
-app = angular.module('app', ['ui.bootstrap', 'ngAnimate', 'ngRoute'])
+app = angular.module('app', ['ui.bootstrap', 'ngAnimate', 'ngRoute', 'ngMap'])
 
 app.config ['$routeProvider', ($routeProvider) ->
   $routeProvider
     .when('/home',
       templateUrl: 'partials/home.html'
       controller: 'HomeCtrl')
-    .when('/about',
-      templateUrl: 'partials/about.html'
-      controller: 'AboutCtrl')
+    .when('/contact-us',
+      templateUrl: 'partials/contact-us.html'
+      controller: 'HomeCtrl')
     .otherwise redirectTo: '/home'
   return
 ]
@@ -35,8 +35,6 @@ app.controller 'HomeCtrl', ($scope) ->
       img: 'images/ic_collaboration.png'
     }
   ]
-
-app.controller 'AboutCtrl', ($scope) ->
 
 app.controller 'CarouselCtrl', ($scope) ->
   $scope.options =

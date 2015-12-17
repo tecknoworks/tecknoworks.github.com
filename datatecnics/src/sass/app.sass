@@ -1,14 +1,16 @@
 $accent-color: #36939a
 $gray-color: #595959
 $teal-color: #47959f
-$footer-height: 231px
+$footer-height: 211px
 
 @import url(//fonts.googleapis.com/css?family=Ubuntu)
 $font-family-sans-serif:  "Ubuntu", sans-serif !default
 $icon-font-path: '../../bower_components/bootstrap-sass/assets/fonts/bootstrap/'
 $background-color: #fafafa
 $text-color: #242021
-$border-radius-base: 45px
+$border-radius-base: 0px
+$btn-border-radius-base: 45px
+$input-border-radius: 45px
 $btn-primary-bg: $teal-color
 $btn-default-bg: $gray-color
 $btn-default-border: $gray-color
@@ -47,7 +49,6 @@ html, body
   margin-top: -$footer-height
   height: $footer-height
   clear: both
-  padding-top: 20px
 
 .pretty-colors
   h3
@@ -56,6 +57,13 @@ html, body
     overflow: hidden
   p
     min-height: 70px
+
+.menu
+  a
+    text-decoration: none !important
+    font-weight: normal
+    &:hover, &:focus
+      color: $teal-color
 
 .home-wall-of-text
   @extend .content-stuff
@@ -139,3 +147,16 @@ html, body
 
 .content-stuff
   padding-bottom: 50px
+
+.dropdown
+  padding-bottom: 10px
+  padding-left: 10px
+  padding-right: 10px
+  a
+    color: $text-color
+
+ng-map
+  height: 400px
+
+.carousel
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)

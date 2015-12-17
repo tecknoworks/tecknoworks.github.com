@@ -1,20 +1,3 @@
-<div class="container-fluid content-stuff">
-  <div ng-controller="CarouselCtrl">
-    <div>
-      <uib-carousel interval="options.interval" no-wrap="options.noWrapSlides">
-        <uib-slide ng-repeat="slide in options.slides" active="slide.active">
-          <img ng-src="{{slide.image}}" style="margin:auto;">
-          <div class="carousel-caption">
-            <h4>{{slide.bigText}}</h4>
-            <p>{{slide.text}}</p>
-            <button type="button" class="btn btn-primary">read more</button>
-          </div>
-        </uib-slide>
-      </uib-carousel>
-    </div>
-  </div>
-</div>
-
 <div class="container home-wall-of-text">
   <div class="col-md-6 breather-right">
     <h2>We are <span class="accent">Datatecnics</span></h2>
@@ -45,7 +28,7 @@
   </div>
 </div>
 
-<div class="container pretty-colors">
+<div class="container pretty-colors content-stuff">
   <div class="row">
     <div class="col-md-4 pan pan-yellow">
       <h3>Connectivity</h3>

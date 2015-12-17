@@ -14,8 +14,8 @@
     <div class="wrapper">
       <div class="main">
         <div class="container">
-          <div class="row">
-            <img src="images/img_logo.png" alt="" />
+          <div class="row" style="padding-top: 12px">
+            <img src="images/img_logo.png" alt=""/>
             <div class="pull-right copy-icons">
               <img src="images/ic_facebook.png" alt="" />
               <img src="images/ic_twitter.png" alt="" />
@@ -24,15 +24,45 @@
             </div>
           </div>
 
-          <div class="row">
-            <span class="pull-right">
-              <a ng-href="#home">home</a>
-              <a ng-href="#about">about</a>
-            </span>
+          <div class="row menu">
+            <div class="dropdown pull-right">
+              <a data-target="#" ng-href="#contact-us">
+                Contact Us
+              </a>
+            </div>
+            <div class="dropdown pull-right">
+              <a id="dLabel" data-toggle="dropdown" data-target="#" href="/page.html">
+                Our Company
+              </a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li><a href="#">Some action</a></li>
+                <li><a href="#">Some other action</a></li>
+              </ul>
+            </div>
+            <div class="dropdown pull-right">
+              <a data-target="#" ng-href="#home">
+                Home
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="content-stuff" ng-view></div>
+        <div class="container-fluid content-stuff">
+          <div ng-controller="CarouselCtrl">
+            <uib-carousel interval="options.interval" no-wrap="options.noWrapSlides">
+              <uib-slide ng-repeat="slide in options.slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                  <h4>{{slide.bigText}}</h4>
+                  <p>{{slide.text}}</p>
+                  <button type="button" class="btn btn-primary">read more</button>
+                </div>
+              </uib-slide>
+            </uib-carousel>
+          </div>
+        </div>
+
+        <div class="" ng-view></div>
       </div>
     </div>
 
@@ -63,7 +93,7 @@
               <img src="images/img_logo_footer.png" class="img-responsive" alt="" />
             </div>
             <div class="copy-text col-md-7">
-              <span>Copyright© 2010-2015, Datatecnics Corporation: All Rights Reserved</span>
+              <span>Copyright© 2010-2015, Datatecnics Corporation: All Rights Reserved.</span>
             </div>
             <div class="copy-icons col-md-2">
               <div class="pull-right">
@@ -84,6 +114,7 @@
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
