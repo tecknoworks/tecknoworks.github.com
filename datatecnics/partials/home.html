@@ -5,8 +5,9 @@
         <uib-slide ng-repeat="slide in options.slides" active="slide.active">
           <img ng-src="{{slide.image}}" style="margin:auto;">
           <div class="carousel-caption">
-            <h4>Slide {{$index}}</h4>
+            <h4>{{slide.bigText}}</h4>
             <p>{{slide.text}}</p>
+            <button type="button" class="btn btn-primary">read more</button>
           </div>
         </uib-slide>
       </uib-carousel>
@@ -14,9 +15,9 @@
   </div>
 </div>
 
-<div class="container content-stuff">
+<div class="container home-wall-of-text">
   <div class="col-md-6">
-    <h1>We are <span class="accent">Datatecnics</span></h1>
+    <h2>We are <span class="accent">Datatecnics</span></h2>
     <p>
       Datatecnics is a multi-award winning smart infrastructure company pioneering the way in the Industrial Internet of Things (IIOT).We are creating, developing, and commercializing technologies with the capability to transform the way the world interacts with its physical infrastructure. We change what is passive into truly smart infrastructure capable of autonomous communication delivering for our users substantial productivity, efficiency, and operational gains across the breadth of industry.
     </p>
@@ -31,36 +32,38 @@
     </p>
   </div>
   <div class="col-md-6">
-    <h1>Our values</h1>
-    <div class="row" ng-repeat="n in [1, 2, 3, 4]">
+    <h2>Our values</h2>
+    <div class="row" ng-repeat="ourValue in ourValues">
       <div class="col-md-2">
-        <img src="images/ic_twitter.png" alt="" class="pull-left"/>
+        <img src="images/ic_twitter.png" alt="" class=""/>
       </div>
       <div class="col-md-10">
-        <h3>Quality</h3>
-        <p>Everything quality</p>
+        <h4>{{ourValue.heading}}</h4>
+        <p>{{ourValue.text}}</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="col-md-4 pan pan-yellow">
-    <h3>connectivity</h3>
-    <p>IOT</p>
-    <p>Some more text</p>
-    <button type="button" class="btn btn-primary">read more</button>
-  </div>
-  <div class="col-md-4 pan pan-blue">
-    <h3>connectivity</h3>
-    <p>IOT</p>
-    <p>Some more text</p>
-    <button type="button" class="btn btn-primary">read more</button>
-  </div>
-  <div class="col-md-4 pan pan-orange">
-    <h3>connectivity</h3>
-    <p>IOT</p>
-    <p>Some more text</p>
-    <button type="button" class="btn btn-primary">read more</button>
+<div class="container pretty-colors">
+  <div class="row">
+    <div class="col-md-4 pan pan-yellow">
+      <h3>Connectivity</h3>
+      <h4>IIOT</h4>
+      <p>We help our clients harness and unlock the incredible power that connective IIOT technology offers.</p>
+      <button type="button" class="btn btn-primary">read more</button>
+    </div>
+    <div class="col-md-4 pan pan-blue">
+      <h3>Nanotechnology</h3>
+      <h4>Integration</h4>
+      <p>Nanotechnology has the potential to change the world. We think it’s time to turn that into reality.</p>
+      <button type="button" class="btn btn-primary">read more</button>
+    </div>
+    <div class="col-md-4 pan pan-orange">
+      <h3>Pipeline integrity assurance</h3>
+      <h4>Zerofail Standard</h4>
+      <p>Delivering 90% of water and 70% of oil & gas supplies, outdated pipelines can be transformed through our IIOT technologies.</p>
+      <button type="button" class="btn btn-primary">read more</button>
+    </div>
   </div>
 </div>

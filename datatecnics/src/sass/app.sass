@@ -2,7 +2,11 @@ $icon-font-path: '../../bower_components/bootstrap-sass/assets/fonts/bootstrap/'
 $background-color: #fafafa
 $text-color: #242021
 $accent-color: #36939a
+
+$gray-color: #595959
 $teal-color: #47959f
+
+$footer-height: 250px
 
 $btn-primary-bg: $teal-color
 
@@ -11,6 +15,9 @@ $font-family-sans-serif:  "Ubuntu", sans-serif !default
 
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 
+h1, h2, h3, h4, h5, h6
+  text-transform: uppercase
+
 .container
   text-align: justify
 
@@ -18,8 +25,38 @@ $font-family-sans-serif:  "Ubuntu", sans-serif !default
   padding-left: 0px !important
   padding-right: 0px !important
 
+html, body
+  height: 100%
+
 body
   // padding-top: 76px
+
+.wrapper
+  min-height: 100%
+
+.main
+  overflow: auto
+  padding-bottom: $footer-height
+
+.footer
+  position: relative
+  margin-top: -$footer-height
+  height: $footer-height
+  clear: both
+  padding-top: 20px
+
+.pretty-colors
+  h3
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+  p
+    min-height: 70px
+
+.home-wall-of-text
+  @extend .content-stuff
+  h2
+    padding-bottom: 50px
 
 .carousel-control.right
   background-image: none !important
@@ -27,16 +64,38 @@ body
 .carousel-control.left
   background-image: none !important
 
+.carousel-caption
+  padding: 15px
+  top: 100px
+  bottom: auto
+  max-width: 400px
+  background-color: rgba( $gray-color, .7 )
+
+  h4
+    text-align: left
+
+  p
+    text-align: justify
+
 .accent
   color: $accent-color
 
 .subscribe
+  padding-bottom: 25px
+  padding-top: 25px
   color: #ffffff
   background-color: $teal-color
 
+.vcenter
+  display: inline-block
+  vertical-align: middle
+  float: none
+
 .copyright
+  padding-bottom: 25px
+  padding-top: 25px
   color: #ffffff
-  background-color: #595959
+  background-color: $gray-color
 
 .pan
   padding: 15px

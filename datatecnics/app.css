@@ -5810,6 +5810,9 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase; }
+
 .container {
   text-align: justify; }
 
@@ -5817,20 +5820,67 @@ button.close {
   padding-left: 0px !important;
   padding-right: 0px !important; }
 
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%; }
+
+.main {
+  overflow: auto;
+  padding-bottom: 250px; }
+
+.footer {
+  position: relative;
+  margin-top: -250px;
+  height: 250px;
+  clear: both;
+  padding-top: 20px; }
+
+.pretty-colors h3 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+.pretty-colors p {
+  min-height: 70px; }
+
+.home-wall-of-text h2 {
+  padding-bottom: 50px; }
+
 .carousel-control.right {
   background-image: none !important; }
 
 .carousel-control.left {
   background-image: none !important; }
 
+.carousel-caption {
+  padding: 15px;
+  top: 100px;
+  bottom: auto;
+  max-width: 400px;
+  background-color: rgba(89, 89, 89, 0.7); }
+  .carousel-caption h4 {
+    text-align: left; }
+  .carousel-caption p {
+    text-align: justify; }
+
 .accent {
   color: #36939a; }
 
 .subscribe {
+  padding-bottom: 25px;
+  padding-top: 25px;
   color: #ffffff;
   background-color: #47959f; }
 
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
+
 .copyright {
+  padding-bottom: 25px;
+  padding-top: 25px;
   color: #ffffff;
   background-color: #595959; }
 
@@ -5848,7 +5898,7 @@ button.close {
 .pan-orange {
   background-color: #ffa36a; }
 
-.content-stuff {
+.content-stuff, .home-wall-of-text {
   padding-bottom: 50px; }
 
 /*# sourceMappingURL=app.css.map */
