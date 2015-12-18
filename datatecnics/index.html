@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
@@ -29,9 +29,12 @@
           <div class="row menu" ng-controller="MenuCtrl">
             <div class="dropdown pull-right" ng-repeat="menu in menuItems">
               <a data-toggle="dropdown" ng-href="{{menu.href}}">{{menu.label}}</a>
-              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" ng-show="menu.items">
-                <li ng-repeat="menuItem in menu.items"><a ng-href="{{menuItem.href}}">{{menuItem.label}}</a></li>
-              </ul>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" ng-show="menu.items">
+                    <li ng-repeat="menuItem in menu.items">
+                        <em class="text-muted" ng-show="menuItem.info">{{menuItem.label}}</em>
+                        <a ng-href="{{menuItem.href}}" ng-hide="menuItem.info">{{menuItem.label}}</a>
+                    </li>
+                </ul>
             </div>
           </div>
         </div>
@@ -55,47 +58,36 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container-fluid subscribe">
-        <div class="container">
-          <div class="col-md-4">
-            <h4>Subscribe to our press releases</h4>
-            <p>Stay informed about our news and events</p>
-          </div>
-          <div class="col-md-8">
-            <form class="form-inline pull-right">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name">
+      <footer class="footer">
+          <div class="container-fluid subscribe">
+              <div class="container">
+                    <h4>A SMART INFRASTRUCTURE COMPANY</h4>
+                    <p>
+                        At Datatecnics, we firmly believe in a strong, defining philosophy to guide all our projects and endeavors.
+                    </p>
               </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-              <button type="submit" class="btn btn-default">Subscribe</button>
-            </form>
           </div>
-        </div>
-      </div>
-      <div class="container-fluid copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <img src="images/img_logo_footer.png" class="img-responsive" alt="" />
-            </div>
-            <div class="copy-text col-md-7">
-              <span>Copyright© 2010-2015, Datatecnics Corporation: All Rights Reserved.</span>
-            </div>
-            <div class="copy-icons col-md-2">
-              <div class="pull-right">
-                <img src="images/ic_facebook_footer.png" alt="" />
-                <img src="images/ic_twitter_footer.png" alt="" />
-                <img src="images/ic_phone_footer.png" alt="" />
-                <img src="images/ic_mail_footer.png" alt="" />
+          <div class="container-fluid copyright">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <img src="images/img_logo_footer.png" class="img-responsive" alt="" />
+                      </div>
+                      <div class="copy-text col-md-7">
+                          <span>Copyright© 2010-2015, Datatecnics Corporation: All Rights Reserved.</span>
+                      </div>
+                      <div class="copy-icons col-md-2">
+                          <div class="pull-right">
+                              <img src="images/ic_facebook_footer.png" alt="" />
+                              <img src="images/ic_twitter_footer.png" alt="" />
+                              <img src="images/ic_phone_footer.png" alt="" />
+                              <img src="images/ic_mail_footer.png" alt="" />
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>

@@ -5855,6 +5855,10 @@ html, body {
   .menu a:hover, .menu a:focus {
     cursor: pointer;
     color: #47959f; }
+.menu em {
+  margin-left: 20px;
+  line-height: 30px;
+  color: #36939a; }
 
 .home-wall-of-text h2 {
   padding-bottom: 50px; }

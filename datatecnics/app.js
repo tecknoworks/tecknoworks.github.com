@@ -150,7 +150,8 @@ app.controller('MenuCtrl', function($scope) {
       items: [
         {
           label: 'Our technology focus',
-          href: '#our-technology-focus'
+          href: '#our-technology-focus',
+          info: true
         }, {
           label: 'Disruptive Products',
           href: '#disruptive-products'

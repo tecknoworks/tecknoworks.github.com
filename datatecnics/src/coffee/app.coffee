@@ -119,6 +119,7 @@ app.controller 'MenuCtrl', ($scope) ->
         {
           label: 'Our technology focus'
           href: '#our-technology-focus'
+          info: true
         }
         { 
           #these should be sub-items
