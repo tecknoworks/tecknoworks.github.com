@@ -92,7 +92,7 @@ app.controller('HomeCtrl', function($scope) {
     }, {
       heading: 'Doing More with Less',
       text: 'Lets us find even more opportunities',
-      img: 'images/ic_collaboration.png'
+      img: 'images/ic_doing_more_with_less.png'
     }
   ];
 });
