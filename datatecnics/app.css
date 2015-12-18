@@ -5853,6 +5853,7 @@ html, body {
   text-decoration: none !important;
   font-weight: normal; }
   .menu a:hover, .menu a:focus {
+    cursor: pointer;
     color: #47959f; }
 
 .home-wall-of-text h2 {
@@ -5884,7 +5885,8 @@ html, body {
   top: 100px;
   bottom: auto;
   max-width: 400px;
-  background-color: rgba(89, 89, 89, 0.7);
+  background-color: rgba(89, 89, 89, 0.5);
+  border-radius: 5px;
   text-align: left; }
   .carousel-caption p {
     text-align: justify; }

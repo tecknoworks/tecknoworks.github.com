@@ -5,26 +5,23 @@ app = angular.module('app', ['ui.bootstrap', 'ngAnimate', 'ngRoute', 'ngMap']);
 
 app.config([
   '$routeProvider', function($routeProvider) {
-    $routeProvider.when('/contact-us', {
-      templateUrl: 'partials/contact-us.html',
+    $routeProvider.when('/home', {
+      templateUrl: 'partials/home.html',
       controller: 'HomeCtrl'
-    }).when('/press', {
-      templateUrl: 'partials/press.html',
+    }).when('/who-we-are', {
+      templateUrl: 'partials/who-we-are.html',
       controller: 'HomeCtrl'
-    }).when('/corporate', {
-      templateUrl: 'partials/corporate.html',
+    }).when('/vision-and-values', {
+      templateUrl: 'partials/vision-and-values.html',
       controller: 'HomeCtrl'
-    }).when('/investor-relations', {
-      templateUrl: 'partials/investor-relations.html',
+    }).when('/overview', {
+      templateUrl: 'partials/overview.html',
       controller: 'HomeCtrl'
-    }).when('/corporate-governance', {
-      templateUrl: 'partials/corporate-governance.html',
+    }).when('/intelligent-pipelines', {
+      templateUrl: 'partials/intelligent-pipelines.html',
       controller: 'HomeCtrl'
-    }).when('/terms-and-conditions', {
-      templateUrl: 'partials/terms-and-conditions.html',
-      controller: 'HomeCtrl'
-    }).when('/products', {
-      templateUrl: 'partials/products.html',
+    }).when('/ast-water-systems', {
+      templateUrl: 'partials/ast-water-systems.html',
       controller: 'HomeCtrl'
     }).when('/system-10', {
       templateUrl: 'partials/system-10.html',
@@ -35,29 +32,14 @@ app.config([
     }).when('/cipps-ex100', {
       templateUrl: 'partials/cipps-ex100.html',
       controller: 'HomeCtrl'
-    }).when('/what-we-do', {
-      templateUrl: 'partials/what-we-do.html',
+    }).when('/innovation', {
+      templateUrl: 'partials/innovation.html',
       controller: 'HomeCtrl'
-    }).when('/overview', {
-      templateUrl: 'partials/overview.html',
+    }).when('/our-technology-focus', {
+      templateUrl: 'partials/our-technology-focus.html',
       controller: 'HomeCtrl'
-    }).when('/pipeline-integrity-assurance', {
-      templateUrl: 'partials/pipeline-integrity-assurance.html',
-      controller: 'HomeCtrl'
-    }).when('/clear-water', {
-      templateUrl: 'partials/clear-water.html',
-      controller: 'HomeCtrl'
-    }).when('/our-company', {
-      templateUrl: 'partials/our-company.html',
-      controller: 'HomeCtrl'
-    }).when('/about-us', {
-      templateUrl: 'partials/about-us.html',
-      controller: 'HomeCtrl'
-    }).when('/vision-and-values', {
-      templateUrl: 'partials/vision-and-values.html',
-      controller: 'HomeCtrl'
-    }).when('/corporate-social-responsability', {
-      templateUrl: 'partials/corporate-social-responsability.html',
+    }).when('/disruptive-products', {
+      templateUrl: 'partials/disruptive-products.html',
       controller: 'HomeCtrl'
     }).when('/iiot', {
       templateUrl: 'partials/iiot.html',
@@ -65,8 +47,29 @@ app.config([
     }).when('/nanotechnology', {
       templateUrl: 'partials/nanotechnology.html',
       controller: 'HomeCtrl'
-    }).when('/home', {
-      templateUrl: 'partials/home.html',
+    }).when('/corporate', {
+      templateUrl: 'partials/corporate.html',
+      controller: 'HomeCtrl'
+    }).when('/investor-relations', {
+      templateUrl: 'partials/investor-relations.html',
+      controller: 'HomeCtrl'
+    }).when('/shareholder-services', {
+      templateUrl: 'partials/shareholder-services.html',
+      controller: 'HomeCtrl'
+    }).when('/corporate-governance', {
+      templateUrl: 'partials/corporate-governance.html',
+      controller: 'HomeCtrl'
+    }).when('/csr', {
+      templateUrl: 'partials/csr.html',
+      controller: 'HomeCtrl'
+    }).when('/terms-and-conditions', {
+      templateUrl: 'partials/terms-and-conditions.html',
+      controller: 'HomeCtrl'
+    }).when('/careers', {
+      templateUrl: 'partials/careers.html',
+      controller: 'HomeCtrl'
+    }).when('/contact', {
+      templateUrl: 'partials/contact.html',
       controller: 'HomeCtrl'
     }).otherwise({
       redirectTo: '/home'
@@ -92,42 +95,49 @@ app.controller('HomeCtrl', function($scope) {
       heading: 'Collaboration',
       text: 'When others see competitors, we see potential partnerships and shared goals',
       img: 'images/ic_collaboration.png'
+    }, {
+      heading: 'Doing More with Less',
+      text: 'Lets us find even more opportunities',
+      img: 'images/ic_collaboration.png'
     }
   ];
 });
 
 app.controller('MenuCtrl', function($scope) {
-  return $scope.menuItems = [
+  $scope.menuItems = [
     {
-      label: 'Contact Us',
-      href: '#contact-us'
+      label: 'Home',
+      href: '#home'
     }, {
-      label: 'Press',
-      href: '#press',
+      label: 'About',
+      href: '',
       items: [
         {
-          label: 'News',
-          href: '#news'
+          label: 'Who We Are',
+          href: '#who-we-are'
+        }, {
+          label: 'Vision and Values',
+          href: '#vision-and-values'
         }
       ]
     }, {
-      label: 'Corporate',
-      href: '#corporate',
+      label: 'Business Focus',
+      href: '',
       items: [
         {
-          label: 'Investor Relations',
-          href: '#investor-relations'
+          label: 'Overview',
+          href: '#overview'
         }, {
-          label: 'Corporate Governance',
-          href: '#corporate-governance'
+          label: 'Intelligent Pipelines',
+          href: '#intelligent-pipelines'
         }, {
-          label: 'Terms And Conditions',
-          href: '#terms-and-conditions'
+          label: 'AST Water Systems',
+          href: '#ast-water-systems'
         }
       ]
     }, {
       label: 'Products',
-      href: '#products',
+      href: '',
       items: [
         {
           label: 'System 10',
@@ -141,33 +151,15 @@ app.controller('MenuCtrl', function($scope) {
         }
       ]
     }, {
-      label: 'What We Do',
-      href: '#what-we-do',
+      label: 'Innovation',
+      href: '#innovation',
       items: [
         {
-          label: 'Overview',
-          href: '#overview'
+          label: 'Our technology focus',
+          href: '#our-technology-focus'
         }, {
-          label: 'Pipeline Integrity Assurance',
-          href: '#pipeline-integrity-assurance'
-        }, {
-          label: 'Clear Water',
-          href: '#clear-water'
-        }
-      ]
-    }, {
-      label: 'Our Company',
-      href: '#our-company',
-      items: [
-        {
-          label: 'About Us',
-          href: '#about-us'
-        }, {
-          label: 'Vision And Values',
-          href: '#vision-and-values'
-        }, {
-          label: 'Corporate Social Responsability',
-          href: '#corporate-social-responsability'
+          label: 'Disruptive Products',
+          href: '#disruptive-products'
         }, {
           label: 'IIOT',
           href: '#iiot'
@@ -177,10 +169,35 @@ app.controller('MenuCtrl', function($scope) {
         }
       ]
     }, {
-      label: 'Home',
-      href: '#home'
+      label: 'Corporate',
+      href: '#corporate',
+      items: [
+        {
+          label: 'Investor Relations',
+          href: '#investor-relations'
+        }, {
+          label: 'Shareholder Services',
+          href: '#shareholder-services'
+        }, {
+          label: 'Corporate Governance',
+          href: '#corporate-governance'
+        }, {
+          label: 'CSR',
+          href: '#csr'
+        }, {
+          label: 'Terms and Conditions',
+          href: '#terms-and-conditions'
+        }
+      ]
+    }, {
+      label: 'Careers',
+      href: '#careers'
+    }, {
+      label: 'Contact Us',
+      href: '#contact'
     }
   ];
+  return $scope.menuItems.reverse();
 });
 
 app.controller('CarouselCtrl', function($scope) {

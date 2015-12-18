@@ -1,3 +1,19 @@
-<div class="container">
-  vision
+<div class="container home-wall-of-text">
+    <h2>Vision and Values</h2>
+    <p>At Datatecnics, we firmly believe in a strong, defining philosophy to guide all our projects and endeavors.</p>
+
+    <h3><span class="accent">Vision Statement</span></h3>
+    <p>
+        To become the leading Industrial Internet of Things enterprise in the world by 2025 through consistently innovative research, development and commercialization of intelligent products and services
+    </p>
+    <h3><span class="accent">Our values</span></h3>
+    <div class="row" ng-repeat="ourValue in ourValues">
+        <div class="col-sm-2 col-md-1 value-icon">
+            <img ng-src="{{ourValue.img}}" alt="" class="" />
+        </div>
+        <div class="col-sm-10 col-md-11">
+            <h4>{{ourValue.heading}}</h4>
+            <p>{{ourValue.text}}</p>
+        </div>
+    </div>
 </div>
