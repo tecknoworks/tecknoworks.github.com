@@ -12,11 +12,10 @@ app.config ['$routeProvider', ($routeProvider) ->
     .when '/cipps-wx100', templateUrl: 'partials/cipps-wx100.html', controller: 'HomeCtrl'
     .when '/cipps-ex100', templateUrl: 'partials/cipps-ex100.html', controller: 'HomeCtrl'
     .when '/innovation', templateUrl: 'partials/innovation.html', controller: 'HomeCtrl'
-    .when '/our-technology-focus', templateUrl: 'partials/our-technology-focus.html', controller: 'HomeCtrl'
+    #.when '/our-technology-focus', templateUrl: 'partials/our-technology-focus.html', controller: 'HomeCtrl'
     .when '/disruptive-products', templateUrl: 'partials/disruptive-products.html', controller: 'HomeCtrl'
     .when '/iiot', templateUrl: 'partials/iiot.html', controller: 'HomeCtrl'
     .when '/nanotechnology', templateUrl: 'partials/nanotechnology.html', controller: 'HomeCtrl'
-    .when '/corporate', templateUrl: 'partials/corporate.html', controller: 'HomeCtrl'
     .when '/investor-relations', templateUrl: 'partials/investor-relations.html', controller: 'HomeCtrl'
     .when '/shareholder-services', templateUrl: 'partials/shareholder-services.html', controller: 'HomeCtrl'
     .when '/corporate-governance', templateUrl: 'partials/corporate-governance.html', controller: 'HomeCtrl'
@@ -115,7 +114,7 @@ app.controller 'MenuCtrl', ($scope) ->
     }
     {
       label: 'Innovation'
-      href: '#innovation'
+      href: ''
       items: [
         {
           label: 'Our technology focus'
@@ -138,7 +137,7 @@ app.controller 'MenuCtrl', ($scope) ->
     }
     {
       label: 'Corporate'
-      href: '#corporate'
+      href: ''
       items: [
         {
           label: 'Investor Relations'

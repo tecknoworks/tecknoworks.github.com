@@ -35,9 +35,6 @@ app.config([
     }).when('/innovation', {
       templateUrl: 'partials/innovation.html',
       controller: 'HomeCtrl'
-    }).when('/our-technology-focus', {
-      templateUrl: 'partials/our-technology-focus.html',
-      controller: 'HomeCtrl'
     }).when('/disruptive-products', {
       templateUrl: 'partials/disruptive-products.html',
       controller: 'HomeCtrl'
@@ -46,9 +43,6 @@ app.config([
       controller: 'HomeCtrl'
     }).when('/nanotechnology', {
       templateUrl: 'partials/nanotechnology.html',
-      controller: 'HomeCtrl'
-    }).when('/corporate', {
-      templateUrl: 'partials/corporate.html',
       controller: 'HomeCtrl'
     }).when('/investor-relations', {
       templateUrl: 'partials/investor-relations.html',
@@ -152,7 +146,7 @@ app.controller('MenuCtrl', function($scope) {
       ]
     }, {
       label: 'Innovation',
-      href: '#innovation',
+      href: '',
       items: [
         {
           label: 'Our technology focus',
@@ -170,7 +164,7 @@ app.controller('MenuCtrl', function($scope) {
       ]
     }, {
       label: 'Corporate',
-      href: '#corporate',
+      href: '',
       items: [
         {
           label: 'Investor Relations',
