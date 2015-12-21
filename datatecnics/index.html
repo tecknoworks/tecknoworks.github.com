@@ -18,11 +18,11 @@
             <a href="#home">
               <img src="images/img_logo.png" alt="" ng-href="#home"/>
             </a>
-            <div class="pull-right copy-icons">
-              <img src="images/ic_facebook.png" alt="" />
-              <img src="images/ic_twitter.png" alt="" />
-              <img src="images/ic_phone.png" alt="" />
-              <img src="images/ic_mail.png" alt="" />
+            <div class="pull-right copy-icons" ng-controller="MenuCtrl">
+                <a target="_blank" href="https://www.facebook.com/Datatecnics/?ref=hl"><img src="images/ic_facebook.png" alt="facebook" /></a>
+                <a target="_blank" href="https://twitter.com/Datatecnics"><img src="images/ic_twitter.png" alt="twitter" /></a>
+                <a ng-href="{{menuItems[0].href}}"><img src="images/ic_phone.png" alt="" /></a>
+                <a href="mailto:cs@datatecnics.com" target="_top"><img src="images/ic_mail.png" alt="" /></a>
             </div>
           </div>
 
@@ -77,12 +77,12 @@
                           <span>Copyright© 2010-2015, Datatecnics Corporation: All Rights Reserved.</span>
                       </div>
                       <div class="copy-icons col-md-2">
-                          <div class="pull-right">
-                              <img src="images/ic_facebook_footer.png" alt="" />
-                              <img src="images/ic_twitter_footer.png" alt="" />
-                              <img src="images/ic_phone_footer.png" alt="" />
-                              <img src="images/ic_mail_footer.png" alt="" />
-                          </div>
+                          <div class="pull-right" ng-controller="MenuCtrl">
+                              <a target="_blank" href="https://www.facebook.com/Datatecnics/?ref=hl"><img src="images/ic_facebook_footer.png" alt="facebook" /></a>
+                              <a target="_blank" href="https://twitter.com/Datatecnics"><img src="images/ic_twitter_footer.png" alt="twitter" /></a>
+                              <a ng-href="{{menuItems[0].href}}"><img src="images/ic_phone_footer.png" alt="" /></a>
+                              <a href="mailto:cs@datatecnics.com" target="_top"><img src="images/ic_mail_footer.png" alt="" /></a>
+                        </div>
                       </div>
                   </div>
               </div>
